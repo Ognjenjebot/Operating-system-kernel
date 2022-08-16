@@ -1,3 +1,10 @@
+# 1 "src/supervisorTrap.S"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 31 "<command-line>"
+# 1 "/usr/riscv64-linux-gnu/include/stdc-predef.h" 1 3
+# 32 "<command-line>" 2
+# 1 "src/supervisorTrap.S"
 .extern _ZN5Riscv20handleSupervisorTrapEv
 
 .align 4
@@ -12,11 +19,10 @@ _ZN5Riscv14supervisorTrapEv:
 
     call _ZN5Riscv20handleSupervisorTrapEv
 
-    #provera da li je bio ecall, jer ako jeste povratna vrednost koja je zapisana u a0 ce biti izmenjena
+    #provera da li je bio ecall, posto moram vrednost x0 novu upisati na stek da ne bi ostao kod poziva u a0
     csrr t0, scause
-    addi t0, t0, -8
-    beqz t0, anula
-    addi t0, t0, -1
+    addi t1, t0, -9
+    beqz t1, anula
     bnez t1, popregs
 anula:
     sd a0, 80(sp)

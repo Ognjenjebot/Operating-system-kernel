@@ -9,10 +9,10 @@
 #include "scheduler.hpp"
 
 // Thread Control Block
-class TCB
+class _thread
 {
 public:
-    ~TCB() { delete[] stack; }
+    ~_thread() { delete[] stack; }
 
     bool isFinished() const { return finished; }
 
@@ -22,14 +22,14 @@ public:
 
     using Body = void (*)();
 
-    static TCB *createThread(Body body);
+    static _thread *createThread(Body body);
 
     static void yield();
 
-    static TCB *running;
+    static _thread *running;
 
 private:
-    TCB(Body body, uint64 timeSlice) :
+    _thread(Body body, uint64 timeSlice) :
             body(body),
             stack(body != nullptr ? new uint64[STACK_SIZE] : nullptr),
             context({(uint64) &threadWrapper,

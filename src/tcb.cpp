@@ -5,33 +5,33 @@
 #include "../h/tcb.hpp"
 #include "../h/riscv.hpp"
 
-TCB *TCB::running = nullptr;
+_thread *_thread::running = nullptr;
 
-uint64 TCB::timeSliceCounter = 0;
+uint64 _thread::timeSliceCounter = 0;
 
-TCB *TCB::createThread(Body body)
+_thread *_thread::createThread(Body body)
 {
-    return new TCB(body, TIME_SLICE);
+    return new _thread(body, TIME_SLICE);
 }
 
-void TCB::yield()
+void _thread::yield()
 {
     __asm__ volatile ("ecall");
 }
 
-void TCB::dispatch()
+void _thread::dispatch()
 {
-    TCB *old = running;
+    _thread *old = running;
     if (!old->isFinished()) { Scheduler::put(old); }
     running = Scheduler::get();
 
-    TCB::contextSwitch(&old->context, &running->context);
+    _thread::contextSwitch(&old->context, &running->context);
 }
 
-void TCB::threadWrapper()
+void _thread::threadWrapper()
 {
     Riscv::popSppSpie();
     running->body();
     running->setFinished(true);
-    TCB::yield();
+    _thread::yield();
 }
