@@ -9,9 +9,19 @@ _thread *_thread::running = nullptr;
 
 uint64 _thread::timeSliceCounter = 0;
 
+//mickov kod za kreiranje niti
 _thread *_thread::createThread(Body body)
 {
     return new _thread(body, TIME_SLICE);
+}
+//poziv za projekat
+int _thread::createThread(thread_t* handle, Body body, void *args, void *stack)
+{
+    *handle = new _thread(body, args, stack);
+    if(*handle != nullptr)
+        return 0;
+    else
+        return -2;
 }
 
 void _thread::yield()
@@ -34,4 +44,12 @@ void _thread::threadWrapper()
     running->body();
     running->setFinished(true);
     _thread::yield();
+}
+
+int _thread::threadStop(){
+    running->setFinished(true);
+    if(mem_free(running->stack) != 0)
+        return -3;
+    else
+        _thread::yield();
 }
