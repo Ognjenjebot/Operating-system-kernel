@@ -6,6 +6,7 @@
 #include "../h/syscall_c.h"
 #include "../h/syscall_codes.h"
 #include "../h/print.hpp"
+#include "../h/tcb.hpp"
 
 void syscall(){
     __asm__ volatile("ecall");
@@ -37,9 +38,10 @@ void* mem_alloc(size_t size){
 }
 
 int mem_free(void *p){
-
-    __asm__ volatile("mv a0, %0" : : "r" (MEM_FREE));
+    //prvo cu upisati p u a1, jer ako stavim prvo da se upise vrednost u a0 promenicu i argumen p
+    //jer je preko njega poslat argument f-je
     __asm__ volatile("mv a1, %0" : : "r" (p));
+    __asm__ volatile("mv a0, %0" : : "r" (MEM_FREE));
 
     __asm__ volatile("ecall");
     uint64 ret;
@@ -53,7 +55,8 @@ int thread_create( thread_t* handle,
                    ){
     //za ABI poziv mora se dodati i argument za stek
 
-    void* stack = (mem_alloc(DEFAULT_STACK_SIZE));
+    void* volatile stack = new uint64[1024];
+    printInteger((uint64)stack);
     if(stack != nullptr) {
         __asm__ volatile("mv a0, %0" : : "r" (THREAD_CREATE));
         __asm__ volatile("mv a1, %0" : : "r" (handle));

@@ -8,18 +8,23 @@
 #include "syscall_c.h"
 #include "../lib/hw.h"
 #include "scheduler.hpp"
+#include "../h/print.hpp"
+#include "_sem.hpp"
 
 // Thread Control Block
+
 class _thread
 {
 public:
-    ~_thread() { mem_free(stack); }
+    ~_thread() { delete[] stack; }
 
     bool isFinished() const { return finished; }
 
     void setFinished(bool value) { finished = value; }
 
     uint64 getTimeSlice() const { return timeSlice; }
+
+    void dblck();
 
     using Body = void (*)();
 
@@ -42,20 +47,20 @@ private:
             timeSlice(timeSlice),
             finished(false)
     {
-        if (body != nullptr) { Scheduler::put(this); }
+        if (body != nullptr) { Scheduler::put(this); printString("pozvan konstukror");}
     }
 
 
 
-    _thread(Body body, void *args, void *stack) :
+    _thread(Body body, void *args, void *stackk) :
             body(body),
-            stack(body != nullptr ? (uint64*)stack : nullptr),
+            stack(body != nullptr ? (uint64*)stackk : nullptr),
             context({(uint64) &threadWrapper,
-                     stack != nullptr ? (uint64) stack : 0
+                     stack != nullptr ?  (uint64) &stack[1024] : 0
                     }),
-            args(args),
             timeSlice(DEFAULT_TIME_SLICE),
-            finished(false)
+            finished(false),
+            args(args)
     {
         if (body != nullptr) {
             Scheduler::put(this);
@@ -73,8 +78,10 @@ private:
     Context context;
     uint64 timeSlice;
     bool finished;
-    void* args;     //prosledjuju se pri kreiranju
-
+    void* args = nullptr;     //prosledjuju se pri kreiranju
+    bool blocked = false;
+    _sem *blockedBy = nullptr;
+    friend class _sem;
     friend class Riscv;
 
     static void threadWrapper();

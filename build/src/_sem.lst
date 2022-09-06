@@ -1,0 +1,16 @@
+GAS LISTING /tmp/ccvsFwnr.s 			page 1
+
+
+   1              		.file	"_sem.cpp"
+   2              		.option pic
+   3              		.option norelax
+   4              		.text
+   5              	.Ltext0:
+   6              	.Letext0:
+GAS LISTING /tmp/ccvsFwnr.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 _sem.cpp
+
+NO UNDEFINED SYMBOLS

@@ -19,11 +19,12 @@ _ZN5Riscv14supervisorTrapEv:
 
     call _ZN5Riscv20handleSupervisorTrapEv
 
-    #provera da li je bio ecall, posto moram vrednost x0 novu upisati na stek da ne bi ostao kod poziva u a0
+    #provera da li je bio ecall, jer ako jeste povratna vrednost koja je zapisana u a0 ce biti izmenjena
     csrr t0, scause
-    addi t1, t0, -9
-    beqz t1, anula
-    bnez t1, popregs
+    addi t0, t0, -8
+    beqz t0, anula
+    addi t0, t0, -1
+    bnez t0, popregs
 anula:
     sd a0, 80(sp)
 popregs:

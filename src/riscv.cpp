@@ -35,7 +35,7 @@ void Riscv::handleSupervisorTrap()
             uint64 x;
             __asm__ volatile("mv %0, a1" : "=r" (x));
             x *= MEM_BLOCK_SIZE;
-            uint64 *r = (uint64 *) __mem_alloc(x);
+            void* r = __mem_alloc(x);
             //povratna vrednost
             __asm__ volatile("mv a0, %0" : : "r" (r));
         }else if(code == 0x02) {
@@ -53,9 +53,18 @@ void Riscv::handleSupervisorTrap()
             void* stack;
             __asm__ volatile("mv %0, a1" : "=r" (handle));
             __asm__ volatile("mv %0, a2" : "=r" (body));
-            __asm__ volatile("mv %0, a3" : "=r" (args));
-            __asm__ volatile("mv %0, a4" : "=r" (stack));
+//            __asm__ volatile("mv %0, a3" : "=r" (args));
+//            __asm__ volatile("mv %0, a4" : "=r" (stack));
 
+            //vrednosti registara a3 i a4 se pobrkaju skroz, pa cu  njih uzeti sa steka
+
+            //radi sa fp umesto sp, nzm zasto, proveriti posle
+            __asm__ volatile("ld t2, 104(fp)");
+            __asm__ volatile("ld t3, 112(fp)");
+
+            __asm__ volatile("mv %0, t2" : "=r" (args));
+            __asm__ volatile("mv %0, t3" : "=r" (stack));
+            printInteger((uint64)stack);
             int ret = _thread::createThread(handle, body, args, stack);
             __asm__ volatile("mv a0, %0" : : "r" (ret));
 

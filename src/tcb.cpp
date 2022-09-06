@@ -5,6 +5,7 @@
 #include "../h/tcb.hpp"
 #include "../h/riscv.hpp"
 
+
 _thread *_thread::running = nullptr;
 
 uint64 _thread::timeSliceCounter = 0;
@@ -32,7 +33,14 @@ void _thread::yield()
 void _thread::dispatch()
 {
     _thread *old = running;
-    if (!old->isFinished()) { Scheduler::put(old); }
+    if (!old->isFinished() && !old->blocked) {
+        Scheduler::put(old);
+    }
+    else if(!old->isFinished() && old->blocked){
+        if(old->blockedBy != nullptr){
+            old->blockedBy->blockedList().addLast(old);
+        }
+    }
     running = Scheduler::get();
 
     _thread::contextSwitch(&old->context, &running->context);
@@ -43,13 +51,25 @@ void _thread::threadWrapper()
     Riscv::popSppSpie();
     running->body();
     running->setFinished(true);
+    printString("gotova nit");
     _thread::yield();
 }
 
 int _thread::threadStop(){
     running->setFinished(true);
-    if(mem_free(running->stack) != 0)
-        return -3;
-    else
-        _thread::yield();
+//    if(mem_free(running->stack) != 0)
+//        return -3;
+//    else{
+//        _thread::yield();
+//        return 0;
+//    }
+
+//    delete []running->stack;
+//    nzm da se brise nit ili se samo zaustavlja
+return 0;
+}
+
+void _thread::dblck(){
+    _thread::blocked = false;
+    _thread::blockedBy = nullptr;
 }
