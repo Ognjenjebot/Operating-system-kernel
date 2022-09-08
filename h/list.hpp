@@ -4,6 +4,8 @@
 
 #ifndef OS1_VEZBE07_RISCV_CONTEXT_SWITCH_2_INTERRUPT_LIST_HPP
 #define OS1_VEZBE07_RISCV_CONTEXT_SWITCH_2_INTERRUPT_LIST_HPP
+#include  "scheduler.hpp"
+#include "tcb.hpp"
 
 template<typename T>
 class List
@@ -13,8 +15,9 @@ private:
     {
         T *data;
         Elem *next;
-
-        Elem(T *data, Elem *next) : data(data), next(next) {}
+        int sleepTime;
+        Elem(T *data, Elem *next, int sleepTime = 0) : data(data), next(next), sleepTime(sleepTime) {}
+        Elem(T *data) : data(data), next(nullptr), sleepTime(0) {}
     };
 
     Elem *head, *tail;
@@ -89,6 +92,55 @@ public:
     {
         if (!tail) { return 0; }
         return tail->data;
+    }
+
+    void addSleepingThread(T *data, int time){
+        Elem *elem = new Elem(data);
+        if(!head){
+            head = elem;
+            elem->next = nullptr;
+            elem->sleepTime = time;
+            tail = head;
+            return;
+        }
+        int timeCount = 0;
+        Elem *next = head, *prev = nullptr;
+
+        while(time >= timeCount + next->sleepTime){
+             timeCount += next->sleepTime;
+             prev= next;
+             next = next->next;
+             if(next == nullptr)
+                 break;
+        }
+        if(!prev){
+            head = elem;
+            head->next = next;
+            head->next->sleepTime -=  head->sleepTime;
+        }
+        else {
+            prev->next = elem;
+            elem->next = next;
+            int diff = time - timeCount;
+            elem->sleepTime = diff;
+            if(next != nullptr)
+                next->sleepTime -= diff;
+        }
+    }
+
+    void removeSleepingThreads(){
+        _thread *t;
+        while(head->sleepTime == 0){
+            t = head->data;
+            head = head->next;
+            t->setSleep();
+            Scheduler::put(t);
+        }
+    }
+
+    void sleepControl(){
+        if(head != nullptr && --head->sleepTime == 0) //dekrementira vreme i radi proveru
+            removeSleepingThreads();
     }
 };
 

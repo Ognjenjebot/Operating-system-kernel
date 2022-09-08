@@ -24,6 +24,14 @@ public:
 
     uint64 getTimeSlice() const { return timeSlice; }
 
+    void setSleep(){
+        if(!sleeping)
+            sleeping = true;
+        else
+            sleeping = false;
+    }
+
+
     void dblck();
 
     using Body = void (*)();
@@ -80,6 +88,7 @@ private:
     bool finished;
     void* args = nullptr;     //prosledjuju se pri kreiranju
     bool blocked = false;
+    bool sleeping = false;
     _sem *blockedBy = nullptr;
     friend class _sem;
     friend class Riscv;
@@ -91,6 +100,8 @@ private:
     static void dispatch();
 
     static int threadStop();
+
+    static int sleep(time_t);
 
     static uint64 timeSliceCounter;
 

@@ -82,6 +82,46 @@ int thread_exit(){
     return ret;
 }
 
+int sem_open(sem_t *handle, unsigned init){
+    __asm__ volatile("mv a2, %0" : : "r" (init));
+    __asm__ volatile("mv a1, %0" : : "r" (handle));
+    __asm__ volatile("mv a0, %0" : : "r" (SEM_OPEN));
+    uint64 ret;
+    __asm__ volatile("mv %0, a0" : "=r" (ret));
+    return ret;
+}
+
+int sem_close(sem_t handle){
+    __asm__ volatile("mv a1, %0" : : "r" (handle));
+    __asm__ volatile("mv a0, %0" : : "r" (SEM_CLOSE));
+    uint64 ret;
+    __asm__ volatile("mv %0, a0" : "=r" (ret));
+    return ret;
+}
+
+int sem_wait(sem_t id){
+    __asm__ volatile("mv a1, %0" : : "r" (id));
+    __asm__ volatile("mv a0, %0" : : "r" (SEM_SIGNAL));
+    uint64 ret;
+    __asm__ volatile("mv %0, a0" : "=r" (ret));
+    return ret;
+}
+
+int sem_signal(sem_t id){
+    __asm__ volatile("mv a1, %0" : : "r" (id));
+    __asm__ volatile("mv a0, %0" : : "r" (SEM_SIGNAL));
+    uint64 ret;
+    __asm__ volatile("mv %0, a0" : "=r" (ret));
+    return ret;
+}
+
+int time_sleep(time_t t){
+    __asm__ volatile("mv a1, %0" : : "r" (t));
+    __asm__ volatile("mv a0, %0" : : "r" (THREAD_SLEEP));
+    uint64 ret;
+    __asm__ volatile("mv %0, a0" : "=r" (ret));
+    return ret;
+}
 
 
 

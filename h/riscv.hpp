@@ -6,6 +6,7 @@
 #define OS1_VEZBE07_RISCV_CONTEXT_SWITCH_2_INTERRUPT_RISCV_HPP
 
 #include "../lib/hw.h"
+#include "../h/tcb.hpp"
 
 class Riscv
 {
@@ -83,7 +84,8 @@ private:
 
     // supervisor trap handler
     static void handleSupervisorTrap();
-
+    friend class _thread;
+    static List<_thread> sleepingThreads;
 };
 
 inline uint64 Riscv::r_scause()

@@ -33,10 +33,10 @@ void _thread::yield()
 void _thread::dispatch()
 {
     _thread *old = running;
-    if (!old->isFinished() && !old->blocked) {
+    if (!old->isFinished() && !old->blocked && !old->sleeping) {
         Scheduler::put(old);
     }
-    else if(!old->isFinished() && old->blocked){
+    else if(!old->isFinished() && old->blocked && !old->sleeping){
         if(old->blockedBy != nullptr){
             old->blockedBy->blockedList().addLast(old);
         }
@@ -72,4 +72,11 @@ return 0;
 void _thread::dblck(){
     _thread::blocked = false;
     _thread::blockedBy = nullptr;
+}
+
+int _thread::sleep(time_t time) {
+    running->setSleep();
+    Riscv::sleepingThreads.addSleepingThread(running, time);
+    dispatch();
+    return 0; //TODO povratna vrednost!!!
 }

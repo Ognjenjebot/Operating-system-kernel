@@ -13,11 +13,11 @@
 class _sem{
 
 public:
-    _sem(int val=1) : val(val) {}
+    static int createSem(sem_t*, uint64);
     ~_sem();
 
-    void wait();
-    void signal();
+    int wait();
+    int signal();
 
     int value(){
         return val;
@@ -27,6 +27,7 @@ public:
 
 
 private:
+    _sem(int val=1) : val(val) {}
     void block();
     void deblock();
 

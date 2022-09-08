@@ -23,13 +23,14 @@ void workerBodyA()
 //            _thread::yield();
         }
     }
-    void* p = mem_alloc(4096);
-    printString("stigao do dealokacije\n");
-    printInteger((uint64)p);
-    if(mem_free(p) == 0)
-        printString("USPESNO OSLOBODJENA MEMORIJA!");
-    else
-        printString("NEUSPESNO OSLOBODJENA MEMORIJA");
+//    void* p = mem_alloc(4096);
+//    printString("stigao do dealokacije\n");
+//    printInteger((uint64)p);
+//    if(mem_free(p) == 0)
+//        printString("USPESNO OSLOBODJENA MEMORIJA!");
+//    else
+//        printString("NEUSPESNO OSLOBODJENA MEMORIJA");
+    time_sleep(500);
 }
 
 void workerBodyB()

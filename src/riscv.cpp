@@ -3,13 +3,13 @@
 //
 
 #include "../h/riscv.hpp"
-#include "../h/tcb.hpp"
 #include "../lib/console.h"
 #include "../h/print.hpp"
 #include "../lib/mem.h"
 
 //zasto se ne uvozi body iz tcb.hpp???(using vazi samo za fajl u kom je definisan?)
 using Body = void (*)();
+List<_thread> sleepingThreads;
 
 void Riscv::popSppSpie()
 {
@@ -77,20 +77,43 @@ void Riscv::handleSupervisorTrap()
                 __asm__ volatile("mv a0, zero");
         }else if(code == 0x13){
             //THREAD_DISPACH
+
         }else if(code == 0x21){
             //SEM_OPEN
+            sem_t *handle;
+            uint64 init;
+            __asm__ volatile("mv %0, a1" : "=r" (handle));
+            __asm__ volatile("mv %0, a2" : "=r" (init));
+            int ret = _sem::createSem(handle, init);
+            __asm__ volatile("mv a0, %0" : : "r" (ret));
 
         }else if(code == 0x22){
             //SEM_CLOSE
+            sem_t handle;
+            __asm__ volatile("mv %0, a1" : "=r" (handle));
+            delete handle; //TODO ??????????????????????????????????????
+            int ret;
+            __asm__ volatile("mv a0, %0" : : "r" (ret));
 
         }else if(code == 0x23){
             //SEM_WAIT
+            sem_t handle;
+            __asm__ volatile("mv %0, a1" : "=r" (handle));
+            int ret = handle->wait(); //TODO ?????????;
+            __asm__ volatile("mv a0, %0" : : "r" (ret));
 
         }else if(code == 0x24){
             //SEM_SIGNAL
-
+            sem_t id;
+            __asm__ volatile("mv %0, a1" : "=r" (id));
+            int ret = id->signal();
+            __asm__ volatile("mv a0, %0" : : "r" (ret));
         }else if(code == 0x31){
             //TIME_SLEEP
+            time_t time;
+            __asm__ volatile("mv %0, a1" : "=r" (time));
+            int ret = _thread::sleep(time);
+            __asm__ volatile("mv a0, %0" : : "r" (ret));
 
         }else if(code == 0x41){
             //GETC
@@ -109,6 +132,7 @@ void Riscv::handleSupervisorTrap()
     else if (scause == 0x8000000000000001UL)
     {
         // interrupt: yes; cause code: supervisor software interrupt (CLINT; machine timer interrupt)
+        Riscv::sleepingThreads.sleepControl();  //budi uspaavaneniti ako je dosao red na njih
         mc_sip(SIP_SSIP);
         _thread::timeSliceCounter++;
         if (_thread::timeSliceCounter >= _thread::running->getTimeSlice())

@@ -11,6 +11,14 @@ void unlock(){
     Riscv::ms_sstatus(Riscv::SSTATUS_SIE);
 }
 
+int _sem::createSem(sem_t *handle, uint64 init){
+    *handle = new _sem(init);
+    if(*handle  != nullptr)
+        return 0;
+    else
+        return -2;
+}
+
 _sem::~_sem() {
     lock();
     _thread *t;
@@ -26,9 +34,8 @@ void _sem::block() {
 
     _thread::running->blocked  = true;
     _thread::running->blockedBy = this;
-    _thread::yield();
+    _thread::dispatch();
     //pozvace se zamena konteksta, ako je blocked = true u dispach()-u ce se ubaciti nit u blocked que
-
 }
 
 void _sem::deblock(){
@@ -36,18 +43,20 @@ void _sem::deblock(){
     Scheduler::put(t);
 }
 
-void _sem::wait() {
+int _sem::wait() {
     lock();
     if(--val < 0)
         block();
     unlock();
+    return 0;
 }
 
-void _sem::signal() {
+int _sem::signal() {
     lock();
     if(val++ < 0)
         deblock();
     unlock();
+    return 0;
 }
 
 List<_thread>& _sem::blockedList(){
