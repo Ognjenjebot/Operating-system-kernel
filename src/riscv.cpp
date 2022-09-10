@@ -9,7 +9,7 @@
 
 //zasto se ne uvozi body iz tcb.hpp???(using vazi samo za fajl u kom je definisan?)
 using Body = void (*)();
-List<_thread> sleepingThreads;
+List<_thread> Riscv::sleepingThreads;
 
 void Riscv::popSppSpie()
 {
@@ -92,7 +92,7 @@ void Riscv::handleSupervisorTrap()
             sem_t handle;
             __asm__ volatile("mv %0, a1" : "=r" (handle));
             delete handle; //TODO ??????????????????????????????????????
-            int ret;
+            int ret = 0;
             __asm__ volatile("mv a0, %0" : : "r" (ret));
 
         }else if(code == 0x23){
@@ -132,7 +132,7 @@ void Riscv::handleSupervisorTrap()
     else if (scause == 0x8000000000000001UL)
     {
         // interrupt: yes; cause code: supervisor software interrupt (CLINT; machine timer interrupt)
-        Riscv::sleepingThreads.sleepControl();  //budi uspaavaneniti ako je dosao red na njih
+        Riscv::sleepingThreads.sleepControl();  //budi uspaavane niti ako je dosao red na njih
         mc_sip(SIP_SSIP);
         _thread::timeSliceCounter++;
         if (_thread::timeSliceCounter >= _thread::running->getTimeSlice())

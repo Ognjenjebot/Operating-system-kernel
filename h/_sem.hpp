@@ -8,6 +8,8 @@
 #include "list.hpp"
 #include "tcb.hpp"
 #include "riscv.hpp"
+#include "syscall_c.h"
+#include "scheduler.hpp"
 
 
 class _sem{

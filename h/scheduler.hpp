@@ -8,7 +8,6 @@
 #include "list.hpp"
 
 class _thread;
-
 class Scheduler
 {
 private:

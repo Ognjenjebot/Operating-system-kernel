@@ -24,13 +24,11 @@ public:
 
     uint64 getTimeSlice() const { return timeSlice; }
 
-    void setSleep(){
-        if(!sleeping)
-            sleeping = true;
-        else
-            sleeping = false;
-    }
+    void setSleep();
 
+    void insertScheduler() {
+        Scheduler::put(this);
+    }
 
     void dblck();
 

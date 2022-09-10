@@ -7,7 +7,10 @@
 
 #include "../lib/hw.h"
 #include "../h/tcb.hpp"
+#include "list.hpp"
 
+template<typename T>
+class List;
 class Riscv
 {
 public:

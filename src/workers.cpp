@@ -11,6 +11,8 @@ void workerBodyA()
 {
     for (uint64 i = 0; i < 10; i++)
     {
+        if(i == 5)
+            time_sleep(50);
         printString("A: i=");
         printInteger(i);
         printString("\n");
@@ -30,7 +32,7 @@ void workerBodyA()
 //        printString("USPESNO OSLOBODJENA MEMORIJA!");
 //    else
 //        printString("NEUSPESNO OSLOBODJENA MEMORIJA");
-    time_sleep(500);
+//    time_sleep(50);
 }
 
 void workerBodyB()

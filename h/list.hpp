@@ -4,9 +4,10 @@
 
 #ifndef OS1_VEZBE07_RISCV_CONTEXT_SWITCH_2_INTERRUPT_LIST_HPP
 #define OS1_VEZBE07_RISCV_CONTEXT_SWITCH_2_INTERRUPT_LIST_HPP
-#include  "scheduler.hpp"
-#include "tcb.hpp"
 
+//#include "riscv.hpp"
+
+//class Scheduler;
 template<typename T>
 class List
 {
@@ -129,12 +130,13 @@ public:
     }
 
     void removeSleepingThreads(){
-        _thread *t;
-        while(head->sleepTime == 0){
+        T *t;
+        while(head && head->sleepTime == 0){
             t = head->data;
             head = head->next;
             t->setSleep();
-            Scheduler::put(t);
+            t->insertScheduler();
+//            Scheduler::put(t);
         }
     }
 

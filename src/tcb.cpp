@@ -10,6 +10,13 @@ _thread *_thread::running = nullptr;
 
 uint64 _thread::timeSliceCounter = 0;
 
+void _thread::setSleep(){
+    if(!_thread::sleeping)
+        _thread::sleeping = true;
+    else
+        _thread::sleeping = false;
+}
+
 //mickov kod za kreiranje niti
 _thread *_thread::createThread(Body body)
 {
@@ -73,6 +80,7 @@ void _thread::dblck(){
     _thread::blocked = false;
     _thread::blockedBy = nullptr;
 }
+
 
 int _thread::sleep(time_t time) {
     running->setSleep();

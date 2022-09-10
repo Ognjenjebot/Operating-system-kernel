@@ -40,6 +40,7 @@ void _sem::block() {
 
 void _sem::deblock(){
     _thread *t = blockedThreadQueue.removeFirst();
+    t->dblck();
     Scheduler::put(t);
 }
 
