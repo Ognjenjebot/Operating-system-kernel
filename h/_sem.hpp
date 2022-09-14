@@ -7,8 +7,7 @@
 
 #include "list.hpp"
 #include "tcb.hpp"
-#include "riscv.hpp"
-#include "syscall_c.h"
+//#include "syscall_c.h"
 #include "scheduler.hpp"
 
 
@@ -28,10 +27,12 @@ public:
     List<_thread>& blockedList();
 
 
-private:
     _sem(int val=1) : val(val) {}
+
+private:
     void block();
     void deblock();
+    friend class _buffer;
 
     int val;
 

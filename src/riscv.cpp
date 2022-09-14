@@ -10,6 +10,8 @@
 //zasto se ne uvozi body iz tcb.hpp???(using vazi samo za fajl u kom je definisan?)
 using Body = void (*)();
 List<_thread> Riscv::sleepingThreads;
+KeyboardBuffer Riscv::buff1, Riscv::buff2;
+char Riscv::ttt;
 
 void Riscv::popSppSpie()
 {
@@ -20,6 +22,8 @@ void Riscv::popSppSpie()
 void Riscv::handleSupervisorTrap()
 {
     uint64 scause = r_scause();
+
+    int ret = 0;
 
     if (scause == 0x0000000000000008UL || scause == 0x0000000000000009UL)
     {
@@ -117,9 +121,14 @@ void Riscv::handleSupervisorTrap()
 
         }else if(code == 0x41){
             //GETC
+            ret = buff2.take();
 
         }else if(code == 0x42){
             //PUTC
+            char c;
+            __asm__ volatile("mv %0, a1" : "=r" (c));
+//            *((char*)CONSOLE_TX_DATA) = c;
+            buff1.append(c);
 
         }else{
             _thread::timeSliceCounter = 0;
@@ -128,6 +137,7 @@ void Riscv::handleSupervisorTrap()
 
         w_sstatus(sstatus);
         w_sepc(sepc);
+        __asm__ volatile("mv a0, %0" : : "r" (ret));
     }
     else if (scause == 0x8000000000000001UL)
     {
@@ -145,12 +155,30 @@ void Riscv::handleSupervisorTrap()
             w_sepc(sepc);
         }
     }
-    else if (scause == 0x8000000000000009UL)
-    {
+    else if (scause == 0x8000000000000009UL) {
         // interrupt: yes; cause code: supervisor external interrupt (PLIC; could be keyboard)
-        console_handler();
+//        console_handler();
+        static int IRQ_CONSOLE = 10;
+        int irq = plic_claim();
+        if (irq == IRQ_CONSOLE)
+        {
+            //pomeriti kasnije inicijalizaciju negde drugde(main npr.)
+
+            //NE CUVATI CONSOLE_STATUS U LOKALNOJ PROMNLJIVOJ JER NE RADI IZ NEKOG RAZLOGA!!!!
+            while (*((char*)CONSOLE_STATUS) & CONSOLE_RX_STATUS_BIT){
+                __asm__ volatile("mv a1, %0" : : "r" (*((char*)CONSOLE_STATUS)));
+                char c = (*(char*)CONSOLE_RX_DATA);
+                buff2.append(c);
+//                c = c;
+//                __asm__ volatile("mv a2, %0" : : "r" (c));
+//                ttt = 'e';
+//                buff1.append((*(char*)CONSOLE_RX_DATA));  ne radi direktno??????, mora prvo u promenljivu da se stavi
+//                buff1.append(c);
+            }
+        }
+        plic_complete(irq);
     }
-    else
+        else
     {
         // unexpected trap cause
     }

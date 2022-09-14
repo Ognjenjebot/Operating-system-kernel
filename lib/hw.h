@@ -21,8 +21,8 @@ extern const void* HEAP_END_ADDR;
 static const size_t MEM_BLOCK_SIZE = 64;
 
 extern const uint64 CONSOLE_STATUS;
-extern const uint64 CONSOLE_TX_DATA;
-extern const uint64 CONSOLE_RX_DATA;
+extern const uint64 CONSOLE_TX_DATA;  //za primanje sa konzole
+extern const uint64 CONSOLE_RX_DATA;   //za izbacivanje na konzolu
 
 static const uint64 CONSOLE_IRQ = 10;
 static const uint64 CONSOLE_TX_STATUS_BIT = 1 << 5;

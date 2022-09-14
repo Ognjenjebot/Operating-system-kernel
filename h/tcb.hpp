@@ -32,7 +32,7 @@ public:
 
     void dblck();
 
-    using Body = void (*)();
+    using Body = void (*)(void*);
 
     //mickov poziv, i poziv za projekat
     static _thread *createThread(Body body);
@@ -41,6 +41,9 @@ public:
     static void yield();
 
     static _thread *running;
+
+    static void consoleWrite();
+    static void dispatch();
 
 private:
     //mickov konstruktor
@@ -53,7 +56,7 @@ private:
             timeSlice(timeSlice),
             finished(false)
     {
-        if (body != nullptr) { Scheduler::put(this); printString("pozvan konstukror");}
+        if (body != nullptr) { Scheduler::put(this);}
     }
 
 
@@ -62,7 +65,7 @@ private:
             body(body),
             stack(body != nullptr ? (uint64*)stackk : nullptr),
             context({(uint64) &threadWrapper,
-                     stack != nullptr ?  (uint64) &stack[1024] : 0
+                     stack != nullptr ?  (uint64) &stack[DEFAULT_STACK_SIZE] : 0
                     }),
             timeSlice(DEFAULT_TIME_SLICE),
             finished(false),
@@ -95,7 +98,7 @@ private:
 
     static void contextSwitch(Context *oldContext, Context *runningContext);
 
-    static void dispatch();
+//
 
     static int threadStop();
 

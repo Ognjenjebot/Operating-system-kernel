@@ -55,7 +55,7 @@ int thread_create( thread_t* handle,
                    ){
     //za ABI poziv mora se dodati i argument za stek
 
-    void* volatile stack = new uint64[1024];
+    void* volatile stack = new uint64[DEFAULT_STACK_SIZE];
     printInteger((uint64)stack);
     if(stack != nullptr) {
         __asm__ volatile("mv a0, %0" : : "r" (THREAD_CREATE));
@@ -128,5 +128,17 @@ int time_sleep(time_t t){
     return ret;
 }
 
+char getc(){
+    __asm__ volatile("mv a0, %0" : : "r" (GETC));
+    __asm__ volatile("ecall");
+    char ret;
+    __asm__ volatile("mv %0, a0" : "=r" (ret));
+    return ret;
+}
+void putc(char c){
+    __asm__ volatile("mv a1, %0" : : "r" (c));
+    __asm__ volatile("mv a0, %0" : : "r" (PUTC));
+    __asm__ volatile("ecall");
+}
 
 

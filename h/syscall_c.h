@@ -43,7 +43,7 @@ int time_sleep(time_t);
 
 const int EOF = -1;
 char getc();
-char putc();
+void putc(char);
 
 
 

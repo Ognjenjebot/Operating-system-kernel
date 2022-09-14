@@ -4,12 +4,12 @@
 
 #include "../h/_sem.hpp"
 
-void lock(){
-    Riscv::mc_sstatus(Riscv::SSTATUS_SIE);
-}
-void unlock(){
-    Riscv::ms_sstatus(Riscv::SSTATUS_SIE);
-}
+//void lock(){
+//    Riscv::mc_sstatus(Riscv::SSTATUS_SIE);
+//}
+//void unlock(){
+//    Riscv::ms_sstatus(Riscv::SSTATUS_SIE);
+//}
 
 int _sem::createSem(sem_t *handle, uint64 init){
     *handle = new _sem(init);
@@ -20,14 +20,14 @@ int _sem::createSem(sem_t *handle, uint64 init){
 }
 
 _sem::~_sem() {
-    lock();
+//    lock();
     _thread *t;
     t = blockedThreadQueue.removeLast();
     while(t){
         Scheduler::put(t);
         t = blockedThreadQueue.removeLast();
     }
-    unlock();
+//    unlock();
 }
 
 void _sem::block() {
@@ -45,18 +45,18 @@ void _sem::deblock(){
 }
 
 int _sem::wait() {
-    lock();
+//    lock();
     if(--val < 0)
         block();
-    unlock();
+//    unlock();
     return 0;
 }
 
 int _sem::signal() {
-    lock();
+//    lock();
     if(val++ < 0)
         deblock();
-    unlock();
+//    unlock();
     return 0;
 }
 

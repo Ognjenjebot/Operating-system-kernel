@@ -8,6 +8,7 @@
 #include "../lib/hw.h"
 #include "../h/tcb.hpp"
 #include "list.hpp"
+#include "_buffer.hpp"
 
 template<typename T>
 class List;
@@ -82,13 +83,15 @@ public:
 
     // supervisor trap
     static void supervisorTrap();
-
+    static char ttt;
+    static KeyboardBuffer buff1, buff2;
 private:
 
     // supervisor trap handler
     static void handleSupervisorTrap();
     friend class _thread;
     static List<_thread> sleepingThreads;
+
 };
 
 inline uint64 Riscv::r_scause()

@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccsiBtO9.s 			page 1
+GAS LISTING /tmp/ccDERzz2.s 			page 1
 
 
    1              		.file	"syscall_c.cpp"
@@ -9,7 +9,7 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
    6              		.align	2
    7              		.globl	_Z7syscallv
    9              	_Z7syscallv:
-  10              	.LFB45:
+  10              	.LFB29:
   11              		.file 1 "src/syscall_c.cpp"
    1:src/syscall_c.cpp **** //
    2:src/syscall_c.cpp **** // Created by os on 8/12/22.
@@ -47,18 +47,18 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
   32              		.cfi_def_cfa_offset 0
   33 0018 67800000 		jr	ra
   34              		.cfi_endproc
-  35              	.LFE45:
+  35              	.LFE29:
   37              		.align	2
   38              		.globl	_Z7setArgsv
   40              	_Z7setArgsv:
-  41              	.LFB46:
+  41              	.LFB30:
   14:src/syscall_c.cpp **** 
   15:src/syscall_c.cpp **** void setArgs(){
   42              		.loc 1 15 15 is_stmt 1
   43              		.cfi_startproc
   44 001c 130101FF 		addi	sp,sp,-16
   45              		.cfi_def_cfa_offset 16
-GAS LISTING /tmp/ccsiBtO9.s 			page 2
+GAS LISTING /tmp/ccDERzz2.s 			page 2
 
 
   46 0020 23348100 		sd	s0,8(sp)
@@ -75,11 +75,11 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
   55              		.cfi_def_cfa_offset 0
   56 0030 67800000 		jr	ra
   57              		.cfi_endproc
-  58              	.LFE46:
+  58              	.LFE30:
   60              		.align	2
   61              		.globl	_Z9mem_allocm
   63              	_Z9mem_allocm:
-  64              	.LFB47:
+  64              	.LFB31:
   18:src/syscall_c.cpp **** 
   19:src/syscall_c.cpp **** //pakovanje poziva sa argumentima
   20:src/syscall_c.cpp **** 
@@ -118,7 +118,7 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
   29:src/syscall_c.cpp ****     __asm__ volatile("mv a0, %0" : : "r" (MEM_ALLOC));
   89              		.loc 1 29 5 is_stmt 1
   90              		.loc 1 29 54 is_stmt 0
-GAS LISTING /tmp/ccsiBtO9.s 			page 3
+GAS LISTING /tmp/ccDERzz2.s 			page 3
 
 
   91 0054 93071000 		li	a5,1
@@ -178,16 +178,16 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
   27:src/syscall_c.cpp ****     }
  134              		.loc 1 27 19
  135 007c 2334A4FE 		sd	a0,-24(s0)
-GAS LISTING /tmp/ccsiBtO9.s 			page 4
+GAS LISTING /tmp/ccDERzz2.s 			page 4
 
 
  136 0080 6FF05FFD 		j	.L7
  137              		.cfi_endproc
- 138              	.LFE47:
+ 138              	.LFE31:
  140              		.align	2
  141              		.globl	_Z8mem_freePv
  143              	_Z8mem_freePv:
- 144              	.LFB48:
+ 144              	.LFB32:
   39:src/syscall_c.cpp **** 
   40:src/syscall_c.cpp **** int mem_free(void *p){
  145              		.loc 1 40 22 is_stmt 1
@@ -238,7 +238,7 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
   50:src/syscall_c.cpp **** }
  181              		.loc 1 50 1 is_stmt 0
  182              	#NO_APP
-GAS LISTING /tmp/ccsiBtO9.s 			page 5
+GAS LISTING /tmp/ccDERzz2.s 			page 5
 
 
  183 00a4 1B050500 		sext.w	a0,a0
@@ -250,11 +250,11 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
  189              		.cfi_def_cfa_offset 0
  190 00b0 67800000 		jr	ra
  191              		.cfi_endproc
- 192              	.LFE48:
+ 192              	.LFE32:
  194              		.align	2
  195              		.globl	_Z13thread_createPP7_threadPFvPvES2_
  197              	_Z13thread_createPP7_threadPFvPvES2_:
- 198              	.LFB49:
+ 198              	.LFB33:
   51:src/syscall_c.cpp **** 
   52:src/syscall_c.cpp **** int thread_create( thread_t* handle,
   53:src/syscall_c.cpp ****                    void(*start_routine)(void*),
@@ -298,7 +298,7 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
  229 00f0 97000000 		call	_Z12printIntegerm@plt
  229      E7800000 
  230              	.LVL11:
-GAS LISTING /tmp/ccsiBtO9.s 			page 6
+GAS LISTING /tmp/ccDERzz2.s 			page 6
 
 
   60:src/syscall_c.cpp ****     if(stack != nullptr) {
@@ -358,7 +358,7 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
  275              		.loc 1 69 9
  276              		.loc 1 69 51 is_stmt 0
  277              	# 69 "src/syscall_c.cpp" 1
-GAS LISTING /tmp/ccsiBtO9.s 			page 7
+GAS LISTING /tmp/ccDERzz2.s 			page 7
 
 
   70              	        return ret;
@@ -407,18 +407,18 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
  314 0148 6FF01FFE 		j	.L12
  315              	.LBE4:
  316              		.cfi_endproc
- 317              	.LFE49:
+ 317              	.LFE33:
  319              		.align	2
  320              		.globl	_Z11thread_exitv
  322              	_Z11thread_exitv:
- 323              	.LFB50:
+ 323              	.LFB34:
   76:src/syscall_c.cpp **** 
   77:src/syscall_c.cpp **** int thread_exit(){
  324              		.loc 1 77 18 is_stmt 1
  325              		.cfi_startproc
  326 014c 130101FF 		addi	sp,sp,-16
  327              		.cfi_def_cfa_offset 16
-GAS LISTING /tmp/ccsiBtO9.s 			page 8
+GAS LISTING /tmp/ccDERzz2.s 			page 8
 
 
  328 0150 23348100 		sd	s0,8(sp)
@@ -462,11 +462,11 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
  360              		.cfi_def_cfa_offset 0
  361 0174 67800000 		jr	ra
  362              		.cfi_endproc
- 363              	.LFE50:
+ 363              	.LFE34:
  365              		.align	2
  366              		.globl	_Z8sem_openPP4_semj
  368              	_Z8sem_openPP4_semj:
- 369              	.LFB51:
+ 369              	.LFB35:
   84:src/syscall_c.cpp **** 
   85:src/syscall_c.cpp **** int sem_open(sem_t *handle, unsigned init){
  370              		.loc 1 85 43 is_stmt 1
@@ -478,7 +478,7 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
  376              		.cfi_offset 8, -8
  377 0180 13040101 		addi	s0,sp,16
  378              		.cfi_def_cfa 8, 0
-GAS LISTING /tmp/ccsiBtO9.s 			page 9
+GAS LISTING /tmp/ccDERzz2.s 			page 9
 
 
   86:src/syscall_c.cpp ****     __asm__ volatile("mv a2, %0" : : "r" (init));
@@ -532,13 +532,13 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
  419              		.cfi_def_cfa_offset 0
  420 01a8 67800000 		jr	ra
  421              		.cfi_endproc
- 422              	.LFE51:
+ 422              	.LFE35:
  424              		.align	2
  425              		.globl	_Z9sem_closeP4_sem
  427              	_Z9sem_closeP4_sem:
- 428              	.LFB52:
+ 428              	.LFB36:
   94:src/syscall_c.cpp **** 
-GAS LISTING /tmp/ccsiBtO9.s 			page 10
+GAS LISTING /tmp/ccDERzz2.s 			page 10
 
 
   95:src/syscall_c.cpp **** int sem_close(sem_t handle){
@@ -596,14 +596,14 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
  473              		.cfi_def_cfa_offset 0
  474 01d8 67800000 		jr	ra
  475              		.cfi_endproc
- 476              	.LFE52:
+ 476              	.LFE36:
  478              		.align	2
-GAS LISTING /tmp/ccsiBtO9.s 			page 11
+GAS LISTING /tmp/ccDERzz2.s 			page 11
 
 
  479              		.globl	_Z8sem_waitP4_sem
  481              	_Z8sem_waitP4_sem:
- 482              	.LFB53:
+ 482              	.LFB37:
  103:src/syscall_c.cpp **** 
  104:src/syscall_c.cpp **** int sem_wait(sem_t id){
  483              		.loc 1 104 23 is_stmt 1
@@ -658,16 +658,16 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
  525              		.cfi_def_cfa 2, 16
  526 0204 13010101 		addi	sp,sp,16
  527              		.cfi_def_cfa_offset 0
-GAS LISTING /tmp/ccsiBtO9.s 			page 12
+GAS LISTING /tmp/ccDERzz2.s 			page 12
 
 
  528 0208 67800000 		jr	ra
  529              		.cfi_endproc
- 530              	.LFE53:
+ 530              	.LFE37:
  532              		.align	2
  533              		.globl	_Z10sem_signalP4_sem
  535              	_Z10sem_signalP4_sem:
- 536              	.LFB54:
+ 536              	.LFB38:
  112:src/syscall_c.cpp **** 
  113:src/syscall_c.cpp **** int sem_signal(sem_t id){
  537              		.loc 1 113 25 is_stmt 1
@@ -718,7 +718,7 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
  575 022c 1B050500 		sext.w	a0,a0
  576              	.LVL31:
  577 0230 03348100 		ld	s0,8(sp)
-GAS LISTING /tmp/ccsiBtO9.s 			page 13
+GAS LISTING /tmp/ccDERzz2.s 			page 13
 
 
  578              		.cfi_restore 8
@@ -727,11 +727,11 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
  581              		.cfi_def_cfa_offset 0
  582 0238 67800000 		jr	ra
  583              		.cfi_endproc
- 584              	.LFE54:
+ 584              	.LFE38:
  586              		.align	2
  587              		.globl	_Z10time_sleepm
  589              	_Z10time_sleepm:
- 590              	.LFB55:
+ 590              	.LFB39:
  121:src/syscall_c.cpp **** 
  122:src/syscall_c.cpp **** int time_sleep(time_t t){
  591              		.loc 1 122 25 is_stmt 1
@@ -778,7 +778,7 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
  626              		.loc 1 128 5 is_stmt 1
  129:src/syscall_c.cpp **** }
  627              		.loc 1 129 1 is_stmt 0
-GAS LISTING /tmp/ccsiBtO9.s 			page 14
+GAS LISTING /tmp/ccDERzz2.s 			page 14
 
 
  628              	#NO_APP
@@ -791,546 +791,700 @@ GAS LISTING /tmp/ccsiBtO9.s 			page 1
  635              		.cfi_def_cfa_offset 0
  636 0268 67800000 		jr	ra
  637              		.cfi_endproc
- 638              	.LFE55:
- 640              	.Letext0:
- 641              		.file 2 "src/../lib/hw.h"
- 642              		.file 3 "src/../h/syscall_c.h"
- 643              		.file 4 "src/../h/tcb.hpp"
- 644              		.file 5 "src/../h/_sem.hpp"
- 645              		.file 6 "src/../h/list.hpp"
- 646              		.file 7 "src/../h/syscall_codes.h"
- 647              		.file 8 "src/../h/print.hpp"
-GAS LISTING /tmp/ccsiBtO9.s 			page 15
+ 638              	.LFE39:
+ 640              		.align	2
+ 641              		.globl	_Z4getcv
+ 643              	_Z4getcv:
+ 644              	.LFB40:
+ 130:src/syscall_c.cpp **** 
+ 131:src/syscall_c.cpp **** char getc(){
+ 645              		.loc 1 131 12 is_stmt 1
+ 646              		.cfi_startproc
+ 647 026c 130101FF 		addi	sp,sp,-16
+ 648              		.cfi_def_cfa_offset 16
+ 649 0270 23348100 		sd	s0,8(sp)
+ 650              		.cfi_offset 8, -8
+ 651 0274 13040101 		addi	s0,sp,16
+ 652              		.cfi_def_cfa 8, 0
+ 132:src/syscall_c.cpp ****     __asm__ volatile("mv a0, %0" : : "r" (GETC));
+ 653              		.loc 1 132 5
+ 654              		.loc 1 132 49 is_stmt 0
+ 655 0278 93071004 		li	a5,65
+ 656              	#APP
+ 657              	# 132 "src/syscall_c.cpp" 1
+ 133              	    __asm__ volatile("ecall");
+ 658              		mv a0, a5
+ 659              	# 0 "" 2
+ 660              		.loc 1 133 5 is_stmt 1
+ 661              		.loc 1 133 30 is_stmt 0
+ 662              	# 133 "src/syscall_c.cpp" 1
+ 134              	    char ret;
+ 663              		ecall
+ 664              	# 0 "" 2
+ 665              		.loc 1 134 5 is_stmt 1
+ 135:src/syscall_c.cpp ****     __asm__ volatile("mv %0, a0" : "=r" (ret));
+ 666              		.loc 1 135 5
+ 667              		.loc 1 135 47 is_stmt 0
+ 668              	# 135 "src/syscall_c.cpp" 1
+ 136              	    return ret;
+ 669              		mv a0, a0
+ 670              	# 0 "" 2
+ 671              	.LVL35:
+ 672              		.loc 1 136 5 is_stmt 1
+ 137:src/syscall_c.cpp **** }
+ 673              		.loc 1 137 1 is_stmt 0
+ 674              	#NO_APP
+ 675 0288 1375F50F 		andi	a0,a0,0xff
+ 676 028c 03348100 		ld	s0,8(sp)
+ 677              		.cfi_restore 8
+ 678              		.cfi_def_cfa 2, 16
+GAS LISTING /tmp/ccDERzz2.s 			page 15
+
+
+ 679 0290 13010101 		addi	sp,sp,16
+ 680              		.cfi_def_cfa_offset 0
+ 681 0294 67800000 		jr	ra
+ 682              		.cfi_endproc
+ 683              	.LFE40:
+ 685              		.align	2
+ 686              		.globl	_Z4putcc
+ 688              	_Z4putcc:
+ 689              	.LFB41:
+ 138:src/syscall_c.cpp **** void putc(char c){
+ 690              		.loc 1 138 18 is_stmt 1
+ 691              		.cfi_startproc
+ 692              	.LVL36:
+ 693 0298 130101FF 		addi	sp,sp,-16
+ 694              		.cfi_def_cfa_offset 16
+ 695 029c 23348100 		sd	s0,8(sp)
+ 696              		.cfi_offset 8, -8
+ 697 02a0 13040101 		addi	s0,sp,16
+ 698              		.cfi_def_cfa 8, 0
+ 139:src/syscall_c.cpp ****     __asm__ volatile("mv a1, %0" : : "r" (c));
+ 699              		.loc 1 139 5
+ 700              		.loc 1 139 46 is_stmt 0
+ 701              	#APP
+ 702              	# 139 "src/syscall_c.cpp" 1
+ 140              	    __asm__ volatile("mv a0, %0" : : "r" (PUTC));
+ 703              		mv a1, a0
+ 704              	# 0 "" 2
+ 705              		.loc 1 140 5 is_stmt 1
+ 706              		.loc 1 140 49 is_stmt 0
+ 707              	#NO_APP
+ 708 02a8 93072004 		li	a5,66
+ 709              	#APP
+ 710              	# 140 "src/syscall_c.cpp" 1
+ 141              	    __asm__ volatile("ecall");
+ 711              		mv a0, a5
+ 712              	# 0 "" 2
+ 713              		.loc 1 141 5 is_stmt 1
+ 714              		.loc 1 141 30 is_stmt 0
+ 715              	# 141 "src/syscall_c.cpp" 1
+ 142              	}
+ 716              		ecall
+ 717              	# 0 "" 2
+ 718              		.loc 1 142 1
+ 719              	#NO_APP
+ 720 02b4 03348100 		ld	s0,8(sp)
+ 721              		.cfi_restore 8
+ 722              		.cfi_def_cfa 2, 16
+ 723 02b8 13010101 		addi	sp,sp,16
+ 724              		.cfi_def_cfa_offset 0
+ 725 02bc 67800000 		jr	ra
+ 726              		.cfi_endproc
+ 727              	.LFE41:
+ 729              	.Letext0:
+ 730              		.file 2 "src/../lib/hw.h"
+ 731              		.file 3 "src/../h/syscall_c.h"
+ 732              		.file 4 "src/../h/tcb.hpp"
+ 733              		.file 5 "src/../h/_sem.hpp"
+GAS LISTING /tmp/ccDERzz2.s 			page 16
+
+
+ 734              		.file 6 "src/../h/list.hpp"
+ 735              		.file 7 "src/../h/syscall_codes.h"
+ 736              		.file 8 "src/../h/print.hpp"
+GAS LISTING /tmp/ccDERzz2.s 			page 17
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 syscall_c.cpp
-     /tmp/ccsiBtO9.s:9      .text:0000000000000000 _Z7syscallv
-     /tmp/ccsiBtO9.s:13     .text:0000000000000000 .L0 
-     /tmp/ccsiBtO9.s:14     .text:0000000000000000 .L0 
-     /tmp/ccsiBtO9.s:15     .text:0000000000000004 .L0 
-     /tmp/ccsiBtO9.s:17     .text:0000000000000008 .L0 
-     /tmp/ccsiBtO9.s:19     .text:000000000000000c .L0 
-     /tmp/ccsiBtO9.s:21     .text:000000000000000c .L0 
+     /tmp/ccDERzz2.s:9      .text:0000000000000000 _Z7syscallv
+     /tmp/ccDERzz2.s:13     .text:0000000000000000 .L0 
+     /tmp/ccDERzz2.s:14     .text:0000000000000000 .L0 
+     /tmp/ccDERzz2.s:15     .text:0000000000000004 .L0 
+     /tmp/ccDERzz2.s:17     .text:0000000000000008 .L0 
+     /tmp/ccDERzz2.s:19     .text:000000000000000c .L0 
+     /tmp/ccDERzz2.s:21     .text:000000000000000c .L0 
    src/syscall_c.cpp:12     .text:000000000000000c .L0 
-     /tmp/ccsiBtO9.s:28     .text:0000000000000010 .L0 
-     /tmp/ccsiBtO9.s:29     .text:0000000000000014 .L0 
-     /tmp/ccsiBtO9.s:30     .text:0000000000000014 .L0 
-     /tmp/ccsiBtO9.s:32     .text:0000000000000018 .L0 
-     /tmp/ccsiBtO9.s:34     .text:000000000000001c .L0 
-     /tmp/ccsiBtO9.s:40     .text:000000000000001c _Z7setArgsv
-     /tmp/ccsiBtO9.s:43     .text:000000000000001c .L0 
-     /tmp/ccsiBtO9.s:44     .text:000000000000001c .L0 
-     /tmp/ccsiBtO9.s:45     .text:0000000000000020 .L0 
-     /tmp/ccsiBtO9.s:47     .text:0000000000000024 .L0 
-     /tmp/ccsiBtO9.s:49     .text:0000000000000028 .L0 
-     /tmp/ccsiBtO9.s:51     .text:0000000000000028 .L0 
-     /tmp/ccsiBtO9.s:52     .text:000000000000002c .L0 
-     /tmp/ccsiBtO9.s:53     .text:000000000000002c .L0 
-     /tmp/ccsiBtO9.s:55     .text:0000000000000030 .L0 
-     /tmp/ccsiBtO9.s:57     .text:0000000000000034 .L0 
-     /tmp/ccsiBtO9.s:63     .text:0000000000000034 _Z9mem_allocm
-     /tmp/ccsiBtO9.s:66     .text:0000000000000034 .L0 
-     /tmp/ccsiBtO9.s:68     .text:0000000000000034 .L0 
-     /tmp/ccsiBtO9.s:69     .text:0000000000000038 .L0 
-     /tmp/ccsiBtO9.s:71     .text:000000000000003c .L0 
-     /tmp/ccsiBtO9.s:73     .text:0000000000000040 .L0 
-     /tmp/ccsiBtO9.s:75     .text:0000000000000040 .L0 
-     /tmp/ccsiBtO9.s:76     .text:0000000000000040 .L0 
-     /tmp/ccsiBtO9.s:77     .text:0000000000000040 .L0 
-     /tmp/ccsiBtO9.s:79     .text:0000000000000044 .L0 
-     /tmp/ccsiBtO9.s:81     .text:0000000000000048 .L0 
-     /tmp/ccsiBtO9.s:82     .text:0000000000000048 .L0 
-     /tmp/ccsiBtO9.s:85     .text:000000000000004c .L0 
-     /tmp/ccsiBtO9.s:87     .text:0000000000000050 .L0 
-     /tmp/ccsiBtO9.s:90     .text:0000000000000054 .L0 
-     /tmp/ccsiBtO9.s:91     .text:0000000000000054 .L0 
-     /tmp/ccsiBtO9.s:97     .text:000000000000005c .L0 
-     /tmp/ccsiBtO9.s:99     .text:000000000000005c .L0 
+     /tmp/ccDERzz2.s:28     .text:0000000000000010 .L0 
+     /tmp/ccDERzz2.s:29     .text:0000000000000014 .L0 
+     /tmp/ccDERzz2.s:30     .text:0000000000000014 .L0 
+     /tmp/ccDERzz2.s:32     .text:0000000000000018 .L0 
+     /tmp/ccDERzz2.s:34     .text:000000000000001c .L0 
+     /tmp/ccDERzz2.s:40     .text:000000000000001c _Z7setArgsv
+     /tmp/ccDERzz2.s:43     .text:000000000000001c .L0 
+     /tmp/ccDERzz2.s:44     .text:000000000000001c .L0 
+     /tmp/ccDERzz2.s:45     .text:0000000000000020 .L0 
+     /tmp/ccDERzz2.s:47     .text:0000000000000024 .L0 
+     /tmp/ccDERzz2.s:49     .text:0000000000000028 .L0 
+     /tmp/ccDERzz2.s:51     .text:0000000000000028 .L0 
+     /tmp/ccDERzz2.s:52     .text:000000000000002c .L0 
+     /tmp/ccDERzz2.s:53     .text:000000000000002c .L0 
+     /tmp/ccDERzz2.s:55     .text:0000000000000030 .L0 
+     /tmp/ccDERzz2.s:57     .text:0000000000000034 .L0 
+     /tmp/ccDERzz2.s:63     .text:0000000000000034 _Z9mem_allocm
+     /tmp/ccDERzz2.s:66     .text:0000000000000034 .L0 
+     /tmp/ccDERzz2.s:68     .text:0000000000000034 .L0 
+     /tmp/ccDERzz2.s:69     .text:0000000000000038 .L0 
+     /tmp/ccDERzz2.s:71     .text:000000000000003c .L0 
+     /tmp/ccDERzz2.s:73     .text:0000000000000040 .L0 
+     /tmp/ccDERzz2.s:75     .text:0000000000000040 .L0 
+     /tmp/ccDERzz2.s:76     .text:0000000000000040 .L0 
+     /tmp/ccDERzz2.s:77     .text:0000000000000040 .L0 
+     /tmp/ccDERzz2.s:79     .text:0000000000000044 .L0 
+     /tmp/ccDERzz2.s:81     .text:0000000000000048 .L0 
+     /tmp/ccDERzz2.s:82     .text:0000000000000048 .L0 
+     /tmp/ccDERzz2.s:85     .text:000000000000004c .L0 
+     /tmp/ccDERzz2.s:87     .text:0000000000000050 .L0 
+     /tmp/ccDERzz2.s:90     .text:0000000000000054 .L0 
+     /tmp/ccDERzz2.s:91     .text:0000000000000054 .L0 
+     /tmp/ccDERzz2.s:97     .text:000000000000005c .L0 
+     /tmp/ccDERzz2.s:99     .text:000000000000005c .L0 
    src/syscall_c.cpp:30     .text:0000000000000060 .L0 
-     /tmp/ccsiBtO9.s:106    .text:0000000000000064 .L0 
+     /tmp/ccDERzz2.s:106    .text:0000000000000064 .L0 
    src/syscall_c.cpp:31     .text:0000000000000064 .L0 
-     /tmp/ccsiBtO9.s:111    .text:0000000000000068 .L0 
-     /tmp/ccsiBtO9.s:112    .text:0000000000000068 .L0 
+     /tmp/ccDERzz2.s:111    .text:0000000000000068 .L0 
+     /tmp/ccDERzz2.s:112    .text:0000000000000068 .L0 
    src/syscall_c.cpp:34     .text:0000000000000068 .L0 
-     /tmp/ccsiBtO9.s:118    .text:000000000000006c .L0 
-     /tmp/ccsiBtO9.s:120    .text:000000000000006c .L0 
-     /tmp/ccsiBtO9.s:121    .text:0000000000000070 .L0 
-     /tmp/ccsiBtO9.s:122    .text:0000000000000070 .L0 
-     /tmp/ccsiBtO9.s:123    .text:0000000000000070 .L0 
-     /tmp/ccsiBtO9.s:125    .text:0000000000000074 .L0 
-     /tmp/ccsiBtO9.s:129    .text:0000000000000078 .L0 
-GAS LISTING /tmp/ccsiBtO9.s 			page 16
+     /tmp/ccDERzz2.s:118    .text:000000000000006c .L0 
+     /tmp/ccDERzz2.s:120    .text:000000000000006c .L0 
+     /tmp/ccDERzz2.s:121    .text:0000000000000070 .L0 
+     /tmp/ccDERzz2.s:122    .text:0000000000000070 .L0 
+     /tmp/ccDERzz2.s:123    .text:0000000000000070 .L0 
+     /tmp/ccDERzz2.s:125    .text:0000000000000074 .L0 
+     /tmp/ccDERzz2.s:129    .text:0000000000000078 .L0 
+GAS LISTING /tmp/ccDERzz2.s 			page 18
 
 
-     /tmp/ccsiBtO9.s:131    .text:0000000000000078 .L0 
-     /tmp/ccsiBtO9.s:132    .text:0000000000000078 .L0 
-     /tmp/ccsiBtO9.s:135    .text:000000000000007c .L0 
-     /tmp/ccsiBtO9.s:137    .text:0000000000000084 .L0 
-     /tmp/ccsiBtO9.s:143    .text:0000000000000084 _Z8mem_freePv
-     /tmp/ccsiBtO9.s:146    .text:0000000000000084 .L0 
-     /tmp/ccsiBtO9.s:148    .text:0000000000000084 .L0 
-     /tmp/ccsiBtO9.s:149    .text:0000000000000088 .L0 
-     /tmp/ccsiBtO9.s:151    .text:000000000000008c .L0 
-     /tmp/ccsiBtO9.s:153    .text:0000000000000090 .L0 
-     /tmp/ccsiBtO9.s:155    .text:0000000000000090 .L0 
+     /tmp/ccDERzz2.s:131    .text:0000000000000078 .L0 
+     /tmp/ccDERzz2.s:132    .text:0000000000000078 .L0 
+     /tmp/ccDERzz2.s:135    .text:000000000000007c .L0 
+     /tmp/ccDERzz2.s:137    .text:0000000000000084 .L0 
+     /tmp/ccDERzz2.s:143    .text:0000000000000084 _Z8mem_freePv
+     /tmp/ccDERzz2.s:146    .text:0000000000000084 .L0 
+     /tmp/ccDERzz2.s:148    .text:0000000000000084 .L0 
+     /tmp/ccDERzz2.s:149    .text:0000000000000088 .L0 
+     /tmp/ccDERzz2.s:151    .text:000000000000008c .L0 
+     /tmp/ccDERzz2.s:153    .text:0000000000000090 .L0 
+     /tmp/ccDERzz2.s:155    .text:0000000000000090 .L0 
    src/syscall_c.cpp:43     .text:0000000000000090 .L0 
-     /tmp/ccsiBtO9.s:161    .text:0000000000000094 .L0 
-     /tmp/ccsiBtO9.s:163    .text:0000000000000094 .L0 
-     /tmp/ccsiBtO9.s:169    .text:000000000000009c .L0 
+     /tmp/ccDERzz2.s:161    .text:0000000000000094 .L0 
+     /tmp/ccDERzz2.s:163    .text:0000000000000094 .L0 
+     /tmp/ccDERzz2.s:169    .text:000000000000009c .L0 
    src/syscall_c.cpp:46     .text:000000000000009c .L0 
-     /tmp/ccsiBtO9.s:174    .text:00000000000000a0 .L0 
-     /tmp/ccsiBtO9.s:175    .text:00000000000000a0 .L0 
+     /tmp/ccDERzz2.s:174    .text:00000000000000a0 .L0 
+     /tmp/ccDERzz2.s:175    .text:00000000000000a0 .L0 
    src/syscall_c.cpp:48     .text:00000000000000a0 .L0 
-     /tmp/ccsiBtO9.s:181    .text:00000000000000a4 .L0 
-     /tmp/ccsiBtO9.s:183    .text:00000000000000a4 .L0 
-     /tmp/ccsiBtO9.s:186    .text:00000000000000ac .L0 
-     /tmp/ccsiBtO9.s:187    .text:00000000000000ac .L0 
-     /tmp/ccsiBtO9.s:189    .text:00000000000000b0 .L0 
-     /tmp/ccsiBtO9.s:191    .text:00000000000000b4 .L0 
-     /tmp/ccsiBtO9.s:197    .text:00000000000000b4 _Z13thread_createPP7_threadPFvPvES2_
-     /tmp/ccsiBtO9.s:200    .text:00000000000000b4 .L0 
-     /tmp/ccsiBtO9.s:202    .text:00000000000000b4 .L0 
-     /tmp/ccsiBtO9.s:203    .text:00000000000000b8 .L0 
-     /tmp/ccsiBtO9.s:209    .text:00000000000000cc .L0 
-     /tmp/ccsiBtO9.s:210    .text:00000000000000cc .L0 
-     /tmp/ccsiBtO9.s:211    .text:00000000000000cc .L0 
-     /tmp/ccsiBtO9.s:212    .text:00000000000000cc .L0 
-     /tmp/ccsiBtO9.s:213    .text:00000000000000cc .L0 
-     /tmp/ccsiBtO9.s:215    .text:00000000000000d0 .L0 
-     /tmp/ccsiBtO9.s:220    .text:00000000000000dc .L0 
-     /tmp/ccsiBtO9.s:221    .text:00000000000000dc .L0 
-     /tmp/ccsiBtO9.s:227    .text:00000000000000ec .L0 
-     /tmp/ccsiBtO9.s:228    .text:00000000000000ec .L0 
-     /tmp/ccsiBtO9.s:233    .text:00000000000000f8 .L0 
-     /tmp/ccsiBtO9.s:234    .text:00000000000000f8 .L0 
-     /tmp/ccsiBtO9.s:236    .text:00000000000000fc .L0 
-     /tmp/ccsiBtO9.s:239    .text:0000000000000100 .L0 
-     /tmp/ccsiBtO9.s:240    .text:0000000000000100 .L0 
-     /tmp/ccsiBtO9.s:246    .text:0000000000000108 .L0 
+     /tmp/ccDERzz2.s:181    .text:00000000000000a4 .L0 
+     /tmp/ccDERzz2.s:183    .text:00000000000000a4 .L0 
+     /tmp/ccDERzz2.s:186    .text:00000000000000ac .L0 
+     /tmp/ccDERzz2.s:187    .text:00000000000000ac .L0 
+     /tmp/ccDERzz2.s:189    .text:00000000000000b0 .L0 
+     /tmp/ccDERzz2.s:191    .text:00000000000000b4 .L0 
+     /tmp/ccDERzz2.s:197    .text:00000000000000b4 _Z13thread_createPP7_threadPFvPvES2_
+     /tmp/ccDERzz2.s:200    .text:00000000000000b4 .L0 
+     /tmp/ccDERzz2.s:202    .text:00000000000000b4 .L0 
+     /tmp/ccDERzz2.s:203    .text:00000000000000b8 .L0 
+     /tmp/ccDERzz2.s:209    .text:00000000000000cc .L0 
+     /tmp/ccDERzz2.s:210    .text:00000000000000cc .L0 
+     /tmp/ccDERzz2.s:211    .text:00000000000000cc .L0 
+     /tmp/ccDERzz2.s:212    .text:00000000000000cc .L0 
+     /tmp/ccDERzz2.s:213    .text:00000000000000cc .L0 
+     /tmp/ccDERzz2.s:215    .text:00000000000000d0 .L0 
+     /tmp/ccDERzz2.s:220    .text:00000000000000dc .L0 
+     /tmp/ccDERzz2.s:221    .text:00000000000000dc .L0 
+     /tmp/ccDERzz2.s:227    .text:00000000000000ec .L0 
+     /tmp/ccDERzz2.s:228    .text:00000000000000ec .L0 
+     /tmp/ccDERzz2.s:233    .text:00000000000000f8 .L0 
+     /tmp/ccDERzz2.s:234    .text:00000000000000f8 .L0 
+     /tmp/ccDERzz2.s:236    .text:00000000000000fc .L0 
+     /tmp/ccDERzz2.s:239    .text:0000000000000100 .L0 
+     /tmp/ccDERzz2.s:240    .text:0000000000000100 .L0 
+     /tmp/ccDERzz2.s:246    .text:0000000000000108 .L0 
    src/syscall_c.cpp:62     .text:0000000000000108 .L0 
-     /tmp/ccsiBtO9.s:251    .text:000000000000010c .L0 
+     /tmp/ccDERzz2.s:251    .text:000000000000010c .L0 
    src/syscall_c.cpp:63     .text:000000000000010c .L0 
-     /tmp/ccsiBtO9.s:256    .text:0000000000000110 .L0 
+     /tmp/ccDERzz2.s:256    .text:0000000000000110 .L0 
    src/syscall_c.cpp:64     .text:0000000000000110 .L0 
-     /tmp/ccsiBtO9.s:261    .text:0000000000000114 .L0 
-     /tmp/ccsiBtO9.s:263    .text:0000000000000114 .L0 
+     /tmp/ccDERzz2.s:261    .text:0000000000000114 .L0 
+     /tmp/ccDERzz2.s:263    .text:0000000000000114 .L0 
    src/syscall_c.cpp:65     .text:0000000000000118 .L0 
-     /tmp/ccsiBtO9.s:270    .text:000000000000011c .L0 
+     /tmp/ccDERzz2.s:270    .text:000000000000011c .L0 
    src/syscall_c.cpp:66     .text:000000000000011c .L0 
-     /tmp/ccsiBtO9.s:275    .text:0000000000000120 .L0 
-     /tmp/ccsiBtO9.s:276    .text:0000000000000120 .L0 
-GAS LISTING /tmp/ccsiBtO9.s 			page 17
+     /tmp/ccDERzz2.s:275    .text:0000000000000120 .L0 
+     /tmp/ccDERzz2.s:276    .text:0000000000000120 .L0 
+GAS LISTING /tmp/ccDERzz2.s 			page 19
 
 
    src/syscall_c.cpp:69     .text:0000000000000120 .L0 
-     /tmp/ccsiBtO9.s:282    .text:0000000000000124 .L0 
-     /tmp/ccsiBtO9.s:284    .text:0000000000000124 .L0 
-     /tmp/ccsiBtO9.s:290    .text:0000000000000128 .L0 
-     /tmp/ccsiBtO9.s:291    .text:000000000000012c .L0 
-     /tmp/ccsiBtO9.s:292    .text:000000000000012c .L0 
-     /tmp/ccsiBtO9.s:294    .text:0000000000000130 .L0 
-     /tmp/ccsiBtO9.s:295    .text:0000000000000130 .L0 
-     /tmp/ccsiBtO9.s:297    .text:0000000000000134 .L0 
-     /tmp/ccsiBtO9.s:300    .text:0000000000000138 .L0 
-     /tmp/ccsiBtO9.s:303    .text:000000000000013c .L0 
-     /tmp/ccsiBtO9.s:306    .text:0000000000000140 .L0 
-     /tmp/ccsiBtO9.s:310    .text:0000000000000144 .L0 
-     /tmp/ccsiBtO9.s:313    .text:0000000000000144 .L0 
-     /tmp/ccsiBtO9.s:316    .text:000000000000014c .L0 
-     /tmp/ccsiBtO9.s:322    .text:000000000000014c _Z11thread_exitv
-     /tmp/ccsiBtO9.s:325    .text:000000000000014c .L0 
-     /tmp/ccsiBtO9.s:326    .text:000000000000014c .L0 
-     /tmp/ccsiBtO9.s:327    .text:0000000000000150 .L0 
-     /tmp/ccsiBtO9.s:329    .text:0000000000000154 .L0 
-     /tmp/ccsiBtO9.s:331    .text:0000000000000158 .L0 
-     /tmp/ccsiBtO9.s:333    .text:0000000000000158 .L0 
-     /tmp/ccsiBtO9.s:334    .text:0000000000000158 .L0 
-     /tmp/ccsiBtO9.s:340    .text:0000000000000160 .L0 
+     /tmp/ccDERzz2.s:282    .text:0000000000000124 .L0 
+     /tmp/ccDERzz2.s:284    .text:0000000000000124 .L0 
+     /tmp/ccDERzz2.s:290    .text:0000000000000128 .L0 
+     /tmp/ccDERzz2.s:291    .text:000000000000012c .L0 
+     /tmp/ccDERzz2.s:292    .text:000000000000012c .L0 
+     /tmp/ccDERzz2.s:294    .text:0000000000000130 .L0 
+     /tmp/ccDERzz2.s:295    .text:0000000000000130 .L0 
+     /tmp/ccDERzz2.s:297    .text:0000000000000134 .L0 
+     /tmp/ccDERzz2.s:300    .text:0000000000000138 .L0 
+     /tmp/ccDERzz2.s:303    .text:000000000000013c .L0 
+     /tmp/ccDERzz2.s:306    .text:0000000000000140 .L0 
+     /tmp/ccDERzz2.s:310    .text:0000000000000144 .L0 
+     /tmp/ccDERzz2.s:313    .text:0000000000000144 .L0 
+     /tmp/ccDERzz2.s:316    .text:000000000000014c .L0 
+     /tmp/ccDERzz2.s:322    .text:000000000000014c _Z11thread_exitv
+     /tmp/ccDERzz2.s:325    .text:000000000000014c .L0 
+     /tmp/ccDERzz2.s:326    .text:000000000000014c .L0 
+     /tmp/ccDERzz2.s:327    .text:0000000000000150 .L0 
+     /tmp/ccDERzz2.s:329    .text:0000000000000154 .L0 
+     /tmp/ccDERzz2.s:331    .text:0000000000000158 .L0 
+     /tmp/ccDERzz2.s:333    .text:0000000000000158 .L0 
+     /tmp/ccDERzz2.s:334    .text:0000000000000158 .L0 
+     /tmp/ccDERzz2.s:340    .text:0000000000000160 .L0 
    src/syscall_c.cpp:79     .text:0000000000000160 .L0 
-     /tmp/ccsiBtO9.s:345    .text:0000000000000164 .L0 
-     /tmp/ccsiBtO9.s:346    .text:0000000000000164 .L0 
+     /tmp/ccDERzz2.s:345    .text:0000000000000164 .L0 
+     /tmp/ccDERzz2.s:346    .text:0000000000000164 .L0 
    src/syscall_c.cpp:81     .text:0000000000000164 .L0 
-     /tmp/ccsiBtO9.s:352    .text:0000000000000168 .L0 
-     /tmp/ccsiBtO9.s:354    .text:0000000000000168 .L0 
-     /tmp/ccsiBtO9.s:357    .text:0000000000000170 .L0 
-     /tmp/ccsiBtO9.s:358    .text:0000000000000170 .L0 
-     /tmp/ccsiBtO9.s:360    .text:0000000000000174 .L0 
-     /tmp/ccsiBtO9.s:362    .text:0000000000000178 .L0 
-     /tmp/ccsiBtO9.s:368    .text:0000000000000178 _Z8sem_openPP4_semj
-     /tmp/ccsiBtO9.s:371    .text:0000000000000178 .L0 
-     /tmp/ccsiBtO9.s:373    .text:0000000000000178 .L0 
-     /tmp/ccsiBtO9.s:374    .text:000000000000017c .L0 
-     /tmp/ccsiBtO9.s:376    .text:0000000000000180 .L0 
-     /tmp/ccsiBtO9.s:378    .text:0000000000000184 .L0 
-     /tmp/ccsiBtO9.s:380    .text:0000000000000184 .L0 
+     /tmp/ccDERzz2.s:352    .text:0000000000000168 .L0 
+     /tmp/ccDERzz2.s:354    .text:0000000000000168 .L0 
+     /tmp/ccDERzz2.s:357    .text:0000000000000170 .L0 
+     /tmp/ccDERzz2.s:358    .text:0000000000000170 .L0 
+     /tmp/ccDERzz2.s:360    .text:0000000000000174 .L0 
+     /tmp/ccDERzz2.s:362    .text:0000000000000178 .L0 
+     /tmp/ccDERzz2.s:368    .text:0000000000000178 _Z8sem_openPP4_semj
+     /tmp/ccDERzz2.s:371    .text:0000000000000178 .L0 
+     /tmp/ccDERzz2.s:373    .text:0000000000000178 .L0 
+     /tmp/ccDERzz2.s:374    .text:000000000000017c .L0 
+     /tmp/ccDERzz2.s:376    .text:0000000000000180 .L0 
+     /tmp/ccDERzz2.s:378    .text:0000000000000184 .L0 
+     /tmp/ccDERzz2.s:380    .text:0000000000000184 .L0 
    src/syscall_c.cpp:86     .text:0000000000000184 .L0 
-     /tmp/ccsiBtO9.s:386    .text:0000000000000188 .L0 
+     /tmp/ccDERzz2.s:386    .text:0000000000000188 .L0 
    src/syscall_c.cpp:87     .text:0000000000000188 .L0 
-     /tmp/ccsiBtO9.s:391    .text:000000000000018c .L0 
-     /tmp/ccsiBtO9.s:393    .text:000000000000018c .L0 
-     /tmp/ccsiBtO9.s:399    .text:0000000000000194 .L0 
+     /tmp/ccDERzz2.s:391    .text:000000000000018c .L0 
+     /tmp/ccDERzz2.s:393    .text:000000000000018c .L0 
+     /tmp/ccDERzz2.s:399    .text:0000000000000194 .L0 
    src/syscall_c.cpp:89     .text:0000000000000194 .L0 
-     /tmp/ccsiBtO9.s:404    .text:0000000000000198 .L0 
-     /tmp/ccsiBtO9.s:405    .text:0000000000000198 .L0 
+     /tmp/ccDERzz2.s:404    .text:0000000000000198 .L0 
+     /tmp/ccDERzz2.s:405    .text:0000000000000198 .L0 
    src/syscall_c.cpp:91     .text:0000000000000198 .L0 
-     /tmp/ccsiBtO9.s:411    .text:000000000000019c .L0 
-     /tmp/ccsiBtO9.s:413    .text:000000000000019c .L0 
-     /tmp/ccsiBtO9.s:416    .text:00000000000001a4 .L0 
-     /tmp/ccsiBtO9.s:417    .text:00000000000001a4 .L0 
-     /tmp/ccsiBtO9.s:419    .text:00000000000001a8 .L0 
-     /tmp/ccsiBtO9.s:421    .text:00000000000001ac .L0 
-GAS LISTING /tmp/ccsiBtO9.s 			page 18
+     /tmp/ccDERzz2.s:411    .text:000000000000019c .L0 
+     /tmp/ccDERzz2.s:413    .text:000000000000019c .L0 
+     /tmp/ccDERzz2.s:416    .text:00000000000001a4 .L0 
+     /tmp/ccDERzz2.s:417    .text:00000000000001a4 .L0 
+     /tmp/ccDERzz2.s:419    .text:00000000000001a8 .L0 
+     /tmp/ccDERzz2.s:421    .text:00000000000001ac .L0 
+GAS LISTING /tmp/ccDERzz2.s 			page 20
 
 
-     /tmp/ccsiBtO9.s:427    .text:00000000000001ac _Z9sem_closeP4_sem
-     /tmp/ccsiBtO9.s:430    .text:00000000000001ac .L0 
-     /tmp/ccsiBtO9.s:432    .text:00000000000001ac .L0 
-     /tmp/ccsiBtO9.s:433    .text:00000000000001b0 .L0 
-     /tmp/ccsiBtO9.s:435    .text:00000000000001b4 .L0 
-     /tmp/ccsiBtO9.s:437    .text:00000000000001b8 .L0 
-     /tmp/ccsiBtO9.s:439    .text:00000000000001b8 .L0 
+     /tmp/ccDERzz2.s:427    .text:00000000000001ac _Z9sem_closeP4_sem
+     /tmp/ccDERzz2.s:430    .text:00000000000001ac .L0 
+     /tmp/ccDERzz2.s:432    .text:00000000000001ac .L0 
+     /tmp/ccDERzz2.s:433    .text:00000000000001b0 .L0 
+     /tmp/ccDERzz2.s:435    .text:00000000000001b4 .L0 
+     /tmp/ccDERzz2.s:437    .text:00000000000001b8 .L0 
+     /tmp/ccDERzz2.s:439    .text:00000000000001b8 .L0 
    src/syscall_c.cpp:96     .text:00000000000001b8 .L0 
-     /tmp/ccsiBtO9.s:445    .text:00000000000001bc .L0 
-     /tmp/ccsiBtO9.s:447    .text:00000000000001bc .L0 
-     /tmp/ccsiBtO9.s:453    .text:00000000000001c4 .L0 
+     /tmp/ccDERzz2.s:445    .text:00000000000001bc .L0 
+     /tmp/ccDERzz2.s:447    .text:00000000000001bc .L0 
+     /tmp/ccDERzz2.s:453    .text:00000000000001c4 .L0 
    src/syscall_c.cpp:98     .text:00000000000001c4 .L0 
-     /tmp/ccsiBtO9.s:458    .text:00000000000001c8 .L0 
-     /tmp/ccsiBtO9.s:459    .text:00000000000001c8 .L0 
+     /tmp/ccDERzz2.s:458    .text:00000000000001c8 .L0 
+     /tmp/ccDERzz2.s:459    .text:00000000000001c8 .L0 
    src/syscall_c.cpp:100    .text:00000000000001c8 .L0 
-     /tmp/ccsiBtO9.s:465    .text:00000000000001cc .L0 
-     /tmp/ccsiBtO9.s:467    .text:00000000000001cc .L0 
-     /tmp/ccsiBtO9.s:470    .text:00000000000001d4 .L0 
-     /tmp/ccsiBtO9.s:471    .text:00000000000001d4 .L0 
-     /tmp/ccsiBtO9.s:473    .text:00000000000001d8 .L0 
-     /tmp/ccsiBtO9.s:475    .text:00000000000001dc .L0 
-     /tmp/ccsiBtO9.s:481    .text:00000000000001dc _Z8sem_waitP4_sem
-     /tmp/ccsiBtO9.s:484    .text:00000000000001dc .L0 
-     /tmp/ccsiBtO9.s:486    .text:00000000000001dc .L0 
-     /tmp/ccsiBtO9.s:487    .text:00000000000001e0 .L0 
-     /tmp/ccsiBtO9.s:489    .text:00000000000001e4 .L0 
-     /tmp/ccsiBtO9.s:491    .text:00000000000001e8 .L0 
-     /tmp/ccsiBtO9.s:493    .text:00000000000001e8 .L0 
+     /tmp/ccDERzz2.s:465    .text:00000000000001cc .L0 
+     /tmp/ccDERzz2.s:467    .text:00000000000001cc .L0 
+     /tmp/ccDERzz2.s:470    .text:00000000000001d4 .L0 
+     /tmp/ccDERzz2.s:471    .text:00000000000001d4 .L0 
+     /tmp/ccDERzz2.s:473    .text:00000000000001d8 .L0 
+     /tmp/ccDERzz2.s:475    .text:00000000000001dc .L0 
+     /tmp/ccDERzz2.s:481    .text:00000000000001dc _Z8sem_waitP4_sem
+     /tmp/ccDERzz2.s:484    .text:00000000000001dc .L0 
+     /tmp/ccDERzz2.s:486    .text:00000000000001dc .L0 
+     /tmp/ccDERzz2.s:487    .text:00000000000001e0 .L0 
+     /tmp/ccDERzz2.s:489    .text:00000000000001e4 .L0 
+     /tmp/ccDERzz2.s:491    .text:00000000000001e8 .L0 
+     /tmp/ccDERzz2.s:493    .text:00000000000001e8 .L0 
    src/syscall_c.cpp:105    .text:00000000000001e8 .L0 
-     /tmp/ccsiBtO9.s:499    .text:00000000000001ec .L0 
-     /tmp/ccsiBtO9.s:501    .text:00000000000001ec .L0 
-     /tmp/ccsiBtO9.s:507    .text:00000000000001f4 .L0 
+     /tmp/ccDERzz2.s:499    .text:00000000000001ec .L0 
+     /tmp/ccDERzz2.s:501    .text:00000000000001ec .L0 
+     /tmp/ccDERzz2.s:507    .text:00000000000001f4 .L0 
    src/syscall_c.cpp:107    .text:00000000000001f4 .L0 
-     /tmp/ccsiBtO9.s:512    .text:00000000000001f8 .L0 
-     /tmp/ccsiBtO9.s:513    .text:00000000000001f8 .L0 
+     /tmp/ccDERzz2.s:512    .text:00000000000001f8 .L0 
+     /tmp/ccDERzz2.s:513    .text:00000000000001f8 .L0 
    src/syscall_c.cpp:109    .text:00000000000001f8 .L0 
-     /tmp/ccsiBtO9.s:519    .text:00000000000001fc .L0 
-     /tmp/ccsiBtO9.s:521    .text:00000000000001fc .L0 
-     /tmp/ccsiBtO9.s:524    .text:0000000000000204 .L0 
-     /tmp/ccsiBtO9.s:525    .text:0000000000000204 .L0 
-     /tmp/ccsiBtO9.s:527    .text:0000000000000208 .L0 
-     /tmp/ccsiBtO9.s:529    .text:000000000000020c .L0 
-     /tmp/ccsiBtO9.s:535    .text:000000000000020c _Z10sem_signalP4_sem
-     /tmp/ccsiBtO9.s:538    .text:000000000000020c .L0 
-     /tmp/ccsiBtO9.s:540    .text:000000000000020c .L0 
-     /tmp/ccsiBtO9.s:541    .text:0000000000000210 .L0 
-     /tmp/ccsiBtO9.s:543    .text:0000000000000214 .L0 
-     /tmp/ccsiBtO9.s:545    .text:0000000000000218 .L0 
-     /tmp/ccsiBtO9.s:547    .text:0000000000000218 .L0 
+     /tmp/ccDERzz2.s:519    .text:00000000000001fc .L0 
+     /tmp/ccDERzz2.s:521    .text:00000000000001fc .L0 
+     /tmp/ccDERzz2.s:524    .text:0000000000000204 .L0 
+     /tmp/ccDERzz2.s:525    .text:0000000000000204 .L0 
+     /tmp/ccDERzz2.s:527    .text:0000000000000208 .L0 
+     /tmp/ccDERzz2.s:529    .text:000000000000020c .L0 
+     /tmp/ccDERzz2.s:535    .text:000000000000020c _Z10sem_signalP4_sem
+     /tmp/ccDERzz2.s:538    .text:000000000000020c .L0 
+     /tmp/ccDERzz2.s:540    .text:000000000000020c .L0 
+     /tmp/ccDERzz2.s:541    .text:0000000000000210 .L0 
+     /tmp/ccDERzz2.s:543    .text:0000000000000214 .L0 
+     /tmp/ccDERzz2.s:545    .text:0000000000000218 .L0 
+     /tmp/ccDERzz2.s:547    .text:0000000000000218 .L0 
    src/syscall_c.cpp:114    .text:0000000000000218 .L0 
-     /tmp/ccsiBtO9.s:553    .text:000000000000021c .L0 
-     /tmp/ccsiBtO9.s:555    .text:000000000000021c .L0 
-     /tmp/ccsiBtO9.s:561    .text:0000000000000224 .L0 
+     /tmp/ccDERzz2.s:553    .text:000000000000021c .L0 
+     /tmp/ccDERzz2.s:555    .text:000000000000021c .L0 
+     /tmp/ccDERzz2.s:561    .text:0000000000000224 .L0 
    src/syscall_c.cpp:116    .text:0000000000000224 .L0 
-     /tmp/ccsiBtO9.s:566    .text:0000000000000228 .L0 
-     /tmp/ccsiBtO9.s:567    .text:0000000000000228 .L0 
+     /tmp/ccDERzz2.s:566    .text:0000000000000228 .L0 
+     /tmp/ccDERzz2.s:567    .text:0000000000000228 .L0 
    src/syscall_c.cpp:118    .text:0000000000000228 .L0 
-GAS LISTING /tmp/ccsiBtO9.s 			page 19
+GAS LISTING /tmp/ccDERzz2.s 			page 21
 
 
-     /tmp/ccsiBtO9.s:573    .text:000000000000022c .L0 
-     /tmp/ccsiBtO9.s:575    .text:000000000000022c .L0 
-     /tmp/ccsiBtO9.s:578    .text:0000000000000234 .L0 
-     /tmp/ccsiBtO9.s:579    .text:0000000000000234 .L0 
-     /tmp/ccsiBtO9.s:581    .text:0000000000000238 .L0 
-     /tmp/ccsiBtO9.s:583    .text:000000000000023c .L0 
-     /tmp/ccsiBtO9.s:589    .text:000000000000023c _Z10time_sleepm
-     /tmp/ccsiBtO9.s:592    .text:000000000000023c .L0 
-     /tmp/ccsiBtO9.s:594    .text:000000000000023c .L0 
-     /tmp/ccsiBtO9.s:595    .text:0000000000000240 .L0 
-     /tmp/ccsiBtO9.s:597    .text:0000000000000244 .L0 
-     /tmp/ccsiBtO9.s:599    .text:0000000000000248 .L0 
-     /tmp/ccsiBtO9.s:601    .text:0000000000000248 .L0 
+     /tmp/ccDERzz2.s:573    .text:000000000000022c .L0 
+     /tmp/ccDERzz2.s:575    .text:000000000000022c .L0 
+     /tmp/ccDERzz2.s:578    .text:0000000000000234 .L0 
+     /tmp/ccDERzz2.s:579    .text:0000000000000234 .L0 
+     /tmp/ccDERzz2.s:581    .text:0000000000000238 .L0 
+     /tmp/ccDERzz2.s:583    .text:000000000000023c .L0 
+     /tmp/ccDERzz2.s:589    .text:000000000000023c _Z10time_sleepm
+     /tmp/ccDERzz2.s:592    .text:000000000000023c .L0 
+     /tmp/ccDERzz2.s:594    .text:000000000000023c .L0 
+     /tmp/ccDERzz2.s:595    .text:0000000000000240 .L0 
+     /tmp/ccDERzz2.s:597    .text:0000000000000244 .L0 
+     /tmp/ccDERzz2.s:599    .text:0000000000000248 .L0 
+     /tmp/ccDERzz2.s:601    .text:0000000000000248 .L0 
    src/syscall_c.cpp:123    .text:0000000000000248 .L0 
-     /tmp/ccsiBtO9.s:607    .text:000000000000024c .L0 
-     /tmp/ccsiBtO9.s:609    .text:000000000000024c .L0 
-     /tmp/ccsiBtO9.s:615    .text:0000000000000254 .L0 
+     /tmp/ccDERzz2.s:607    .text:000000000000024c .L0 
+     /tmp/ccDERzz2.s:609    .text:000000000000024c .L0 
+     /tmp/ccDERzz2.s:615    .text:0000000000000254 .L0 
    src/syscall_c.cpp:125    .text:0000000000000254 .L0 
-     /tmp/ccsiBtO9.s:620    .text:0000000000000258 .L0 
-     /tmp/ccsiBtO9.s:621    .text:0000000000000258 .L0 
+     /tmp/ccDERzz2.s:620    .text:0000000000000258 .L0 
+     /tmp/ccDERzz2.s:621    .text:0000000000000258 .L0 
    src/syscall_c.cpp:127    .text:0000000000000258 .L0 
-     /tmp/ccsiBtO9.s:627    .text:000000000000025c .L0 
-     /tmp/ccsiBtO9.s:629    .text:000000000000025c .L0 
-     /tmp/ccsiBtO9.s:632    .text:0000000000000264 .L0 
-     /tmp/ccsiBtO9.s:633    .text:0000000000000264 .L0 
-     /tmp/ccsiBtO9.s:635    .text:0000000000000268 .L0 
-     /tmp/ccsiBtO9.s:637    .text:000000000000026c .L0 
-     /tmp/ccsiBtO9.s:648    .text:000000000000026c .L0 
-     /tmp/ccsiBtO9.s:128    .text:0000000000000078 .L6
-     /tmp/ccsiBtO9.s:88     .text:0000000000000054 .L7
-     /tmp/ccsiBtO9.s:309    .text:0000000000000144 .L13
-     /tmp/ccsiBtO9.s:286    .text:0000000000000128 .L12
-     /tmp/ccsiBtO9.s:1885   .debug_abbrev:0000000000000000 .Ldebug_abbrev0
-     /tmp/ccsiBtO9.s:3295   .debug_str:0000000000000787 .LASF146
-     /tmp/ccsiBtO9.s:3173   .debug_str:0000000000000434 .LASF147
-     /tmp/ccsiBtO9.s:3107   .debug_str:0000000000000254 .LASF148
-     /tmp/ccsiBtO9.s:5      .text:0000000000000000 .Ltext0
-     /tmp/ccsiBtO9.s:640    .text:000000000000026c .Letext0
-     /tmp/ccsiBtO9.s:3029   .debug_line:0000000000000000 .Ldebug_line0
-     /tmp/ccsiBtO9.s:3127   .debug_str:00000000000002e6 .LASF0
-     /tmp/ccsiBtO9.s:3153   .debug_str:00000000000003b4 .LASF1
-     /tmp/ccsiBtO9.s:3235   .debug_str:0000000000000601 .LASF2
-     /tmp/ccsiBtO9.s:3243   .debug_str:0000000000000638 .LASF4
-     /tmp/ccsiBtO9.s:3131   .debug_str:00000000000002f9 .LASF3
-     /tmp/ccsiBtO9.s:3035   .debug_str:0000000000000017 .LASF5
-     /tmp/ccsiBtO9.s:3211   .debug_str:0000000000000549 .LASF6
-     /tmp/ccsiBtO9.s:3199   .debug_str:00000000000004db .LASF7
-     /tmp/ccsiBtO9.s:3141   .debug_str:000000000000035c .LASF8
-     /tmp/ccsiBtO9.s:3105   .debug_str:0000000000000244 .LASF9
-     /tmp/ccsiBtO9.s:3109   .debug_str:0000000000000272 .LASF10
-     /tmp/ccsiBtO9.s:3059   .debug_str:00000000000000cb .LASF11
-     /tmp/ccsiBtO9.s:3095   .debug_str:00000000000001d5 .LASF12
-     /tmp/ccsiBtO9.s:3067   .debug_str:000000000000010b .LASF13
-     /tmp/ccsiBtO9.s:3057   .debug_str:00000000000000bb .LASF14
-     /tmp/ccsiBtO9.s:3273   .debug_str:0000000000000715 .LASF15
-     /tmp/ccsiBtO9.s:3087   .debug_str:00000000000001a3 .LASF16
-     /tmp/ccsiBtO9.s:3259   .debug_str:0000000000000697 .LASF17
-GAS LISTING /tmp/ccsiBtO9.s 			page 20
+     /tmp/ccDERzz2.s:627    .text:000000000000025c .L0 
+     /tmp/ccDERzz2.s:629    .text:000000000000025c .L0 
+     /tmp/ccDERzz2.s:632    .text:0000000000000264 .L0 
+     /tmp/ccDERzz2.s:633    .text:0000000000000264 .L0 
+     /tmp/ccDERzz2.s:635    .text:0000000000000268 .L0 
+     /tmp/ccDERzz2.s:637    .text:000000000000026c .L0 
+     /tmp/ccDERzz2.s:643    .text:000000000000026c _Z4getcv
+     /tmp/ccDERzz2.s:646    .text:000000000000026c .L0 
+     /tmp/ccDERzz2.s:647    .text:000000000000026c .L0 
+     /tmp/ccDERzz2.s:648    .text:0000000000000270 .L0 
+     /tmp/ccDERzz2.s:650    .text:0000000000000274 .L0 
+     /tmp/ccDERzz2.s:652    .text:0000000000000278 .L0 
+     /tmp/ccDERzz2.s:654    .text:0000000000000278 .L0 
+     /tmp/ccDERzz2.s:655    .text:0000000000000278 .L0 
+     /tmp/ccDERzz2.s:661    .text:0000000000000280 .L0 
+   src/syscall_c.cpp:133    .text:0000000000000280 .L0 
+     /tmp/ccDERzz2.s:666    .text:0000000000000284 .L0 
+     /tmp/ccDERzz2.s:667    .text:0000000000000284 .L0 
+   src/syscall_c.cpp:135    .text:0000000000000284 .L0 
+     /tmp/ccDERzz2.s:673    .text:0000000000000288 .L0 
+     /tmp/ccDERzz2.s:675    .text:0000000000000288 .L0 
+     /tmp/ccDERzz2.s:677    .text:0000000000000290 .L0 
+     /tmp/ccDERzz2.s:678    .text:0000000000000290 .L0 
+     /tmp/ccDERzz2.s:680    .text:0000000000000294 .L0 
+     /tmp/ccDERzz2.s:682    .text:0000000000000298 .L0 
+     /tmp/ccDERzz2.s:688    .text:0000000000000298 _Z4putcc
+     /tmp/ccDERzz2.s:691    .text:0000000000000298 .L0 
+     /tmp/ccDERzz2.s:693    .text:0000000000000298 .L0 
+     /tmp/ccDERzz2.s:694    .text:000000000000029c .L0 
+     /tmp/ccDERzz2.s:696    .text:00000000000002a0 .L0 
+     /tmp/ccDERzz2.s:698    .text:00000000000002a4 .L0 
+     /tmp/ccDERzz2.s:700    .text:00000000000002a4 .L0 
+   src/syscall_c.cpp:139    .text:00000000000002a4 .L0 
+     /tmp/ccDERzz2.s:706    .text:00000000000002a8 .L0 
+     /tmp/ccDERzz2.s:708    .text:00000000000002a8 .L0 
+     /tmp/ccDERzz2.s:714    .text:00000000000002b0 .L0 
+GAS LISTING /tmp/ccDERzz2.s 			page 22
 
 
-     /tmp/ccsiBtO9.s:3323   .debug_str:000000000000093d .LASF18
-     /tmp/ccsiBtO9.s:3043   .debug_str:000000000000004f .LASF36
-     /tmp/ccsiBtO9.s:3283   .debug_str:0000000000000745 .LASF149
-     /tmp/ccsiBtO9.s:3275   .debug_str:0000000000000721 .LASF19
-     /tmp/ccsiBtO9.s:3145   .debug_str:0000000000000388 .LASF21
-     /tmp/ccsiBtO9.s:3285   .debug_str:000000000000074d .LASF23
-     /tmp/ccsiBtO9.s:3269   .debug_str:00000000000006ed .LASF25
-     /tmp/ccsiBtO9.s:3049   .debug_str:0000000000000077 .LASF20
-     /tmp/ccsiBtO9.s:3319   .debug_str:000000000000090b .LASF22
-     /tmp/ccsiBtO9.s:3157   .debug_str:00000000000003cd .LASF24
-     /tmp/ccsiBtO9.s:3055   .debug_str:000000000000009e .LASF26
-     /tmp/ccsiBtO9.s:3315   .debug_str:00000000000008d6 .LASF27
-     /tmp/ccsiBtO9.s:3287   .debug_str:0000000000000758 .LASF28
-     /tmp/ccsiBtO9.s:3223   .debug_str:0000000000000591 .LASF29
-     /tmp/ccsiBtO9.s:3083   .debug_str:000000000000017e .LASF30
-     /tmp/ccsiBtO9.s:3089   .debug_str:00000000000001b9 .LASF31
-     /tmp/ccsiBtO9.s:3201   .debug_str:00000000000004ee .LASF32
-     /tmp/ccsiBtO9.s:3271   .debug_str:0000000000000708 .LASF33
-     /tmp/ccsiBtO9.s:3081   .debug_str:000000000000015e .LASF34
-     /tmp/ccsiBtO9.s:3195   .debug_str:00000000000004ca .LASF150
-     /tmp/ccsiBtO9.s:3101   .debug_str:000000000000020e .LASF35
-     /tmp/ccsiBtO9.s:3155   .debug_str:00000000000003c7 .LASF52
-     /tmp/ccsiBtO9.s:3187   .debug_str:0000000000000486 .LASF54
-     /tmp/ccsiBtO9.s:3293   .debug_str:000000000000077f .LASF151
-     /tmp/ccsiBtO9.s:3119   .debug_str:00000000000002ba .LASF37
-     /tmp/ccsiBtO9.s:3337   .debug_str:00000000000009b5 .LASF38
-     /tmp/ccsiBtO9.s:3033   .debug_str:0000000000000012 .LASF39
-     /tmp/ccsiBtO9.s:3343   .debug_str:00000000000009e4 .LASF40
-     /tmp/ccsiBtO9.s:3305   .debug_str:000000000000087e .LASF41
-     /tmp/ccsiBtO9.s:3301   .debug_str:000000000000086a .LASF42
-     /tmp/ccsiBtO9.s:3257   .debug_str:000000000000068e .LASF43
-     /tmp/ccsiBtO9.s:3313   .debug_str:00000000000008d1 .LASF44
-     /tmp/ccsiBtO9.s:3193   .debug_str:00000000000004c2 .LASF45
-     /tmp/ccsiBtO9.s:3281   .debug_str:000000000000073c .LASF46
-     /tmp/ccsiBtO9.s:3171   .debug_str:000000000000042a .LASF47
-     /tmp/ccsiBtO9.s:3051   .debug_str:0000000000000083 .LASF48
-     /tmp/ccsiBtO9.s:3225   .debug_str:00000000000005a1 .LASF50
-     /tmp/ccsiBtO9.s:3073   .debug_str:000000000000012b .LASF152
-     /tmp/ccsiBtO9.s:3135   .debug_str:0000000000000317 .LASF153
-     /tmp/ccsiBtO9.s:3077   .debug_str:0000000000000150 .LASF49
-     /tmp/ccsiBtO9.s:3075   .debug_str:0000000000000139 .LASF51
-     /tmp/ccsiBtO9.s:3279   .debug_str:0000000000000731 .LASF53
-     /tmp/ccsiBtO9.s:3327   .debug_str:0000000000000959 .LASF55
-     /tmp/ccsiBtO9.s:3039   .debug_str:0000000000000026 .LASF56
-     /tmp/ccsiBtO9.s:3137   .debug_str:0000000000000343 .LASF57
-     /tmp/ccsiBtO9.s:3245   .debug_str:000000000000063f .LASF154
-     /tmp/ccsiBtO9.s:3241   .debug_str:000000000000062d .LASF58
-     /tmp/ccsiBtO9.s:3333   .debug_str:00000000000009a4 .LASF59
-     /tmp/ccsiBtO9.s:3335   .debug_str:00000000000009af .LASF60
-     /tmp/ccsiBtO9.s:3289   .debug_str:000000000000076f .LASF61
-     /tmp/ccsiBtO9.s:3255   .debug_str:0000000000000684 .LASF62
-     /tmp/ccsiBtO9.s:3143   .debug_str:000000000000036f .LASF63
-     /tmp/ccsiBtO9.s:3085   .debug_str:000000000000019d .LASF64
-     /tmp/ccsiBtO9.s:3103   .debug_str:0000000000000237 .LASF65
-     /tmp/ccsiBtO9.s:3079   .debug_str:0000000000000159 .LASF66
-     /tmp/ccsiBtO9.s:3181   .debug_str:0000000000000457 .LASF67
-     /tmp/ccsiBtO9.s:3277   .debug_str:000000000000072a .LASF68
-GAS LISTING /tmp/ccsiBtO9.s 			page 21
+   src/syscall_c.cpp:141    .text:00000000000002b0 .L0 
+     /tmp/ccDERzz2.s:720    .text:00000000000002b4 .L0 
+     /tmp/ccDERzz2.s:721    .text:00000000000002b8 .L0 
+     /tmp/ccDERzz2.s:722    .text:00000000000002b8 .L0 
+     /tmp/ccDERzz2.s:724    .text:00000000000002bc .L0 
+     /tmp/ccDERzz2.s:726    .text:00000000000002c0 .L0 
+     /tmp/ccDERzz2.s:737    .text:00000000000002c0 .L0 
+     /tmp/ccDERzz2.s:128    .text:0000000000000078 .L6
+     /tmp/ccDERzz2.s:88     .text:0000000000000054 .L7
+     /tmp/ccDERzz2.s:309    .text:0000000000000144 .L13
+     /tmp/ccDERzz2.s:286    .text:0000000000000128 .L12
+     /tmp/ccDERzz2.s:2028   .debug_abbrev:0000000000000000 .Ldebug_abbrev0
+     /tmp/ccDERzz2.s:3513   .debug_str:000000000000079a .LASF151
+     /tmp/ccDERzz2.s:3361   .debug_str:000000000000032b .LASF152
+     /tmp/ccDERzz2.s:3329   .debug_str:0000000000000220 .LASF153
+     /tmp/ccDERzz2.s:5      .text:0000000000000000 .Ltext0
+     /tmp/ccDERzz2.s:729    .text:00000000000002c0 .Letext0
+     /tmp/ccDERzz2.s:3233   .debug_line:0000000000000000 .Ldebug_line0
+     /tmp/ccDERzz2.s:3419   .debug_str:00000000000004f5 .LASF0
+     /tmp/ccDERzz2.s:3439   .debug_str:0000000000000558 .LASF1
+     /tmp/ccDERzz2.s:3397   .debug_str:000000000000044c .LASF2
+     /tmp/ccDERzz2.s:3359   .debug_str:0000000000000324 .LASF4
+     /tmp/ccDERzz2.s:3485   .debug_str:00000000000006d3 .LASF3
+     /tmp/ccDERzz2.s:3271   .debug_str:00000000000000d4 .LASF5
+     /tmp/ccDERzz2.s:3305   .debug_str:000000000000019f .LASF6
+     /tmp/ccDERzz2.s:3445   .debug_str:0000000000000596 .LASF7
+     /tmp/ccDERzz2.s:3417   .debug_str:00000000000004e2 .LASF8
+     /tmp/ccDERzz2.s:3535   .debug_str:0000000000000927 .LASF9
+     /tmp/ccDERzz2.s:3341   .debug_str:00000000000002ba .LASF10
+     /tmp/ccDERzz2.s:3459   .debug_str:00000000000005f0 .LASF11
+     /tmp/ccDERzz2.s:3519   .debug_str:0000000000000889 .LASF12
+     /tmp/ccDERzz2.s:3275   .debug_str:00000000000000e8 .LASF13
+     /tmp/ccDERzz2.s:3247   .debug_str:000000000000003a .LASF14
+     /tmp/ccDERzz2.s:3285   .debug_str:000000000000012b .LASF15
+     /tmp/ccDERzz2.s:3477   .debug_str:0000000000000685 .LASF16
+     /tmp/ccDERzz2.s:3297   .debug_str:0000000000000167 .LASF17
+     /tmp/ccDERzz2.s:3235   .debug_str:0000000000000000 .LASF18
+     /tmp/ccDERzz2.s:3355   .debug_str:0000000000000317 .LASF42
+     /tmp/ccDERzz2.s:3251   .debug_str:000000000000004f .LASF154
+     /tmp/ccDERzz2.s:3523   .debug_str:00000000000008c4 .LASF19
+     /tmp/ccDERzz2.s:3451   .debug_str:00000000000005cc .LASF21
+     /tmp/ccDERzz2.s:3447   .debug_str:00000000000005a9 .LASF23
+     /tmp/ccDERzz2.s:3395   .debug_str:0000000000000431 .LASF25
+     /tmp/ccDERzz2.s:3399   .debug_str:000000000000045a .LASF20
+     /tmp/ccDERzz2.s:3391   .debug_str:00000000000003fb .LASF22
+     /tmp/ccDERzz2.s:3389   .debug_str:00000000000003ee .LASF24
+     /tmp/ccDERzz2.s:3463   .debug_str:0000000000000608 .LASF26
+     /tmp/ccDERzz2.s:3243   .debug_str:000000000000002a .LASF27
+     /tmp/ccDERzz2.s:3253   .debug_str:0000000000000057 .LASF28
+     /tmp/ccDERzz2.s:3501   .debug_str:000000000000073b .LASF29
+     /tmp/ccDERzz2.s:3543   .debug_str:000000000000095d .LASF30
+     /tmp/ccDERzz2.s:3529   .debug_str:00000000000008ec .LASF31
+     /tmp/ccDERzz2.s:3323   .debug_str:0000000000000202 .LASF32
+     /tmp/ccDERzz2.s:3369   .debug_str:0000000000000364 .LASF33
+     /tmp/ccDERzz2.s:3337   .debug_str:0000000000000278 .LASF34
+     /tmp/ccDERzz2.s:3471   .debug_str:0000000000000667 .LASF155
+     /tmp/ccDERzz2.s:3469   .debug_str:000000000000063e .LASF35
+GAS LISTING /tmp/ccDERzz2.s 			page 23
 
 
-     /tmp/ccsiBtO9.s:3263   .debug_str:00000000000006be .LASF69
-     /tmp/ccsiBtO9.s:3117   .debug_str:00000000000002b4 .LASF70
-     /tmp/ccsiBtO9.s:3299   .debug_str:0000000000000859 .LASF71
-     /tmp/ccsiBtO9.s:3331   .debug_str:0000000000000998 .LASF72
-     /tmp/ccsiBtO9.s:3191   .debug_str:00000000000004aa .LASF73
-     /tmp/ccsiBtO9.s:3053   .debug_str:0000000000000091 .LASF74
-     /tmp/ccsiBtO9.s:3125   .debug_str:00000000000002e0 .LASF75
-     /tmp/ccsiBtO9.s:3091   .debug_str:00000000000001bf .LASF76
-     /tmp/ccsiBtO9.s:3341   .debug_str:00000000000009dc .LASF77
-     /tmp/ccsiBtO9.s:3325   .debug_str:0000000000000946 .LASF78
-     /tmp/ccsiBtO9.s:3233   .debug_str:00000000000005ee .LASF79
-     /tmp/ccsiBtO9.s:3247   .debug_str:0000000000000650 .LASF155
-     /tmp/ccsiBtO9.s:3349   .debug_str:0000000000000a1d .LASF80
-     /tmp/ccsiBtO9.s:3099   .debug_str:0000000000000205 .LASF81
-     /tmp/ccsiBtO9.s:3267   .debug_str:00000000000006df .LASF82
-     /tmp/ccsiBtO9.s:3215   .debug_str:000000000000055c .LASF83
-     /tmp/ccsiBtO9.s:3265   .debug_str:00000000000006d0 .LASF84
-     /tmp/ccsiBtO9.s:3061   .debug_str:00000000000000da .LASF85
-     /tmp/ccsiBtO9.s:3065   .debug_str:0000000000000101 .LASF86
-     /tmp/ccsiBtO9.s:3185   .debug_str:000000000000047d .LASF87
-     /tmp/ccsiBtO9.s:3291   .debug_str:0000000000000774 .LASF88
-     /tmp/ccsiBtO9.s:3045   .debug_str:0000000000000057 .LASF89
-     /tmp/ccsiBtO9.s:3139   .debug_str:0000000000000357 .LASF90
-     /tmp/ccsiBtO9.s:3177   .debug_str:000000000000044d .LASF91
-     /tmp/ccsiBtO9.s:3161   .debug_str:00000000000003e4 .LASF92
-     /tmp/ccsiBtO9.s:3071   .debug_str:0000000000000126 .LASF156
-     /tmp/ccsiBtO9.s:3093   .debug_str:00000000000001d0 .LASF93
-     /tmp/ccsiBtO9.s:3163   .debug_str:00000000000003f2 .LASF94
-     /tmp/ccsiBtO9.s:3179   .debug_str:0000000000000452 .LASF95
-     /tmp/ccsiBtO9.s:3321   .debug_str:0000000000000926 .LASF96
-     /tmp/ccsiBtO9.s:3219   .debug_str:000000000000056d .LASF97
-     /tmp/ccsiBtO9.s:3237   .debug_str:000000000000060f .LASF117
-     /tmp/ccsiBtO9.s:3115   .debug_str:0000000000000299 .LASF119
-     /tmp/ccsiBtO9.s:3147   .debug_str:0000000000000398 .LASF98
-     /tmp/ccsiBtO9.s:3345   .debug_str:00000000000009ea .LASF99
-     /tmp/ccsiBtO9.s:3121   .debug_str:00000000000002cf .LASF100
-     /tmp/ccsiBtO9.s:3203   .debug_str:0000000000000502 .LASF101
-     /tmp/ccsiBtO9.s:3197   .debug_str:00000000000004cf .LASF102
-     /tmp/ccsiBtO9.s:3167   .debug_str:00000000000003fc .LASF103
-     /tmp/ccsiBtO9.s:3351   .debug_str:0000000000000a27 .LASF104
-     /tmp/ccsiBtO9.s:3231   .debug_str:00000000000005cf .LASF105
-     /tmp/ccsiBtO9.s:3249   .debug_str:000000000000065b .LASF106
-     /tmp/ccsiBtO9.s:3097   .debug_str:00000000000001e4 .LASF107
-     /tmp/ccsiBtO9.s:3221   .debug_str:0000000000000588 .LASF108
-     /tmp/ccsiBtO9.s:3063   .debug_str:00000000000000e3 .LASF109
-     /tmp/ccsiBtO9.s:3309   .debug_str:00000000000008b2 .LASF110
-     /tmp/ccsiBtO9.s:3307   .debug_str:0000000000000886 .LASF111
-     /tmp/ccsiBtO9.s:3183   .debug_str:0000000000000467 .LASF112
-     /tmp/ccsiBtO9.s:3317   .debug_str:00000000000008df .LASF113
-     /tmp/ccsiBtO9.s:3311   .debug_str:00000000000008c4 .LASF114
-     /tmp/ccsiBtO9.s:3041   .debug_str:000000000000002c .LASF115
-     /tmp/ccsiBtO9.s:3165   .debug_str:00000000000003f7 .LASF116
-     /tmp/ccsiBtO9.s:3069   .debug_str:000000000000011b .LASF118
-     /tmp/ccsiBtO9.s:3209   .debug_str:0000000000000539 .LASF120
-     /tmp/ccsiBtO9.s:590    .text:000000000000023c .LFB55
-     /tmp/ccsiBtO9.s:638    .text:000000000000026c .LFE55
-     /tmp/ccsiBtO9.s:2778   .debug_loc:0000000000000000 .LLST17
-GAS LISTING /tmp/ccsiBtO9.s 			page 22
+     /tmp/ccDERzz2.s:3479   .debug_str:000000000000069b .LASF36
+     /tmp/ccDERzz2.s:3509   .debug_str:000000000000077d .LASF38
+     /tmp/ccDERzz2.s:3319   .debug_str:00000000000001f5 .LASF156
+     /tmp/ccDERzz2.s:3269   .debug_str:00000000000000c7 .LASF37
+     /tmp/ccDERzz2.s:3385   .debug_str:00000000000003cd .LASF39
+     /tmp/ccDERzz2.s:3421   .debug_str:0000000000000502 .LASF40
+     /tmp/ccDERzz2.s:3507   .debug_str:0000000000000766 .LASF41
+     /tmp/ccDERzz2.s:3495   .debug_str:0000000000000713 .LASF43
+     /tmp/ccDERzz2.s:3403   .debug_str:0000000000000472 .LASF44
+     /tmp/ccDERzz2.s:3363   .debug_str:000000000000033d .LASF45
+     /tmp/ccDERzz2.s:3423   .debug_str:000000000000050b .LASF46
+     /tmp/ccDERzz2.s:3367   .debug_str:000000000000035c .LASF47
+     /tmp/ccDERzz2.s:3431   .debug_str:000000000000052b .LASF48
+     /tmp/ccDERzz2.s:3553   .debug_str:00000000000009df .LASF49
+     /tmp/ccDERzz2.s:3425   .debug_str:0000000000000511 .LASF50
+     /tmp/ccDERzz2.s:3237   .debug_str:0000000000000009 .LASF51
+     /tmp/ccDERzz2.s:3461   .debug_str:00000000000005ff .LASF52
+     /tmp/ccDERzz2.s:3409   .debug_str:0000000000000495 .LASF53
+     /tmp/ccDERzz2.s:3379   .debug_str:00000000000003b1 .LASF157
+     /tmp/ccDERzz2.s:3345   .debug_str:00000000000002cd .LASF158
+     /tmp/ccDERzz2.s:3545   .debug_str:000000000000097c .LASF159
+     /tmp/ccDERzz2.s:3521   .debug_str:0000000000000898 .LASF160
+     /tmp/ccDERzz2.s:3441   .debug_str:000000000000056b .LASF54
+     /tmp/ccDERzz2.s:3365   .debug_str:0000000000000342 .LASF55
+     /tmp/ccDERzz2.s:3569   .debug_str:0000000000000a75 .LASF56
+     /tmp/ccDERzz2.s:3413   .debug_str:00000000000004ab .LASF57
+     /tmp/ccDERzz2.s:3487   .debug_str:00000000000006e5 .LASF161
+     /tmp/ccDERzz2.s:3377   .debug_str:00000000000003a6 .LASF58
+     /tmp/ccDERzz2.s:3351   .debug_str:0000000000000301 .LASF59
+     /tmp/ccDERzz2.s:3317   .debug_str:00000000000001ef .LASF60
+     /tmp/ccDERzz2.s:3357   .debug_str:000000000000031f .LASF61
+     /tmp/ccDERzz2.s:3489   .debug_str:00000000000006f6 .LASF62
+     /tmp/ccDERzz2.s:3255   .debug_str:000000000000006e .LASF63
+     /tmp/ccDERzz2.s:3383   .debug_str:00000000000003c7 .LASF64
+     /tmp/ccDERzz2.s:3273   .debug_str:00000000000000db .LASF65
+     /tmp/ccDERzz2.s:3325   .debug_str:0000000000000216 .LASF66
+     /tmp/ccDERzz2.s:3475   .debug_str:0000000000000675 .LASF67
+     /tmp/ccDERzz2.s:3453   .debug_str:00000000000005dc .LASF68
+     /tmp/ccDERzz2.s:3347   .debug_str:00000000000002ea .LASF69
+     /tmp/ccDERzz2.s:3299   .debug_str:000000000000017d .LASF70
+     /tmp/ccDERzz2.s:3303   .debug_str:000000000000018e .LASF71
+     /tmp/ccDERzz2.s:3437   .debug_str:000000000000054c .LASF72
+     /tmp/ccDERzz2.s:3449   .debug_str:00000000000005b4 .LASF73
+     /tmp/ccDERzz2.s:3503   .debug_str:000000000000074b .LASF74
+     /tmp/ccDERzz2.s:3315   .debug_str:00000000000001e9 .LASF75
+     /tmp/ccDERzz2.s:3239   .debug_str:0000000000000011 .LASF76
+     /tmp/ccDERzz2.s:3381   .debug_str:00000000000003bf .LASF77
+     /tmp/ccDERzz2.s:3559   .debug_str:0000000000000a00 .LASF78
+     /tmp/ccDERzz2.s:3311   .debug_str:00000000000001ca .LASF79
+     /tmp/ccDERzz2.s:3353   .debug_str:000000000000030c .LASF162
+     /tmp/ccDERzz2.s:3295   .debug_str:000000000000015d .LASF80
+     /tmp/ccDERzz2.s:3473   .debug_str:000000000000066c .LASF81
+     /tmp/ccDERzz2.s:3375   .debug_str:0000000000000398 .LASF82
+     /tmp/ccDERzz2.s:3313   .debug_str:00000000000001dd .LASF83
+     /tmp/ccDERzz2.s:3435   .debug_str:000000000000053d .LASF84
+     /tmp/ccDERzz2.s:3533   .debug_str:000000000000091e .LASF85
+     /tmp/ccDERzz2.s:3429   .debug_str:0000000000000521 .LASF86
+GAS LISTING /tmp/ccDERzz2.s 			page 24
 
 
-     /tmp/ccsiBtO9.s:2792   .debug_loc:0000000000000039 .LLST18
-     /tmp/ccsiBtO9.s:3113   .debug_str:000000000000028e .LASF121
-     /tmp/ccsiBtO9.s:3253   .debug_str:000000000000066f .LASF122
-     /tmp/ccsiBtO9.s:536    .text:000000000000020c .LFB54
-     /tmp/ccsiBtO9.s:584    .text:000000000000023c .LFE54
-     /tmp/ccsiBtO9.s:2799   .debug_loc:000000000000005c .LLST15
-     /tmp/ccsiBtO9.s:2813   .debug_loc:0000000000000095 .LLST16
-     /tmp/ccsiBtO9.s:3251   .debug_str:0000000000000666 .LASF123
-     /tmp/ccsiBtO9.s:3347   .debug_str:0000000000000a0b .LASF124
-     /tmp/ccsiBtO9.s:482    .text:00000000000001dc .LFB53
-     /tmp/ccsiBtO9.s:530    .text:000000000000020c .LFE53
-     /tmp/ccsiBtO9.s:2820   .debug_loc:00000000000000b8 .LLST13
-     /tmp/ccsiBtO9.s:2834   .debug_loc:00000000000000f1 .LLST14
-     /tmp/ccsiBtO9.s:3159   .debug_str:00000000000003da .LASF125
-     /tmp/ccsiBtO9.s:3047   .debug_str:0000000000000064 .LASF126
-     /tmp/ccsiBtO9.s:428    .text:00000000000001ac .LFB52
-     /tmp/ccsiBtO9.s:476    .text:00000000000001dc .LFE52
-     /tmp/ccsiBtO9.s:3175   .debug_str:0000000000000446 .LASF127
-     /tmp/ccsiBtO9.s:2841   .debug_loc:0000000000000114 .LLST11
-     /tmp/ccsiBtO9.s:2855   .debug_loc:000000000000014d .LLST12
-     /tmp/ccsiBtO9.s:3227   .debug_str:00000000000005be .LASF128
-     /tmp/ccsiBtO9.s:3239   .debug_str:0000000000000619 .LASF129
-     /tmp/ccsiBtO9.s:369    .text:0000000000000178 .LFB51
-     /tmp/ccsiBtO9.s:422    .text:00000000000001ac .LFE51
-     /tmp/ccsiBtO9.s:2862   .debug_loc:0000000000000170 .LLST9
-     /tmp/ccsiBtO9.s:3217   .debug_str:0000000000000568 .LASF130
-     /tmp/ccsiBtO9.s:2876   .debug_loc:00000000000001a9 .LLST10
-     /tmp/ccsiBtO9.s:3169   .debug_str:000000000000041e .LASF131
-     /tmp/ccsiBtO9.s:3261   .debug_str:00000000000006ad .LASF132
-     /tmp/ccsiBtO9.s:323    .text:000000000000014c .LFB50
-     /tmp/ccsiBtO9.s:363    .text:0000000000000178 .LFE50
-     /tmp/ccsiBtO9.s:2883   .debug_loc:00000000000001cc .LLST8
-     /tmp/ccsiBtO9.s:3297   .debug_str:000000000000084b .LASF133
-     /tmp/ccsiBtO9.s:3329   .debug_str:0000000000000973 .LASF134
-     /tmp/ccsiBtO9.s:198    .text:00000000000000b4 .LFB49
-     /tmp/ccsiBtO9.s:317    .text:000000000000014c .LFE49
-     /tmp/ccsiBtO9.s:2890   .debug_loc:00000000000001ef .LLST4
-     /tmp/ccsiBtO9.s:3149   .debug_str:00000000000003a1 .LASF135
-     /tmp/ccsiBtO9.s:2912   .debug_loc:000000000000024e .LLST5
-     /tmp/ccsiBtO9.s:2934   .debug_loc:00000000000002ad .LLST6
-     /tmp/ccsiBtO9.s:237    .text:0000000000000100 .LBB3
-     /tmp/ccsiBtO9.s:287    .text:0000000000000128 .LBE3
-     /tmp/ccsiBtO9.s:2956   .debug_loc:000000000000030c .LLST7
-     /tmp/ccsiBtO9.s:224    .text:00000000000000e8 .LVL10
-     /tmp/ccsiBtO9.s:230    .text:00000000000000f8 .LVL11
-     /tmp/ccsiBtO9.s:3123   .debug_str:00000000000002d7 .LASF136
-     /tmp/ccsiBtO9.s:3339   .debug_str:00000000000009ce .LASF137
-     /tmp/ccsiBtO9.s:144    .text:0000000000000084 .LFB48
-     /tmp/ccsiBtO9.s:192    .text:00000000000000b4 .LFE48
-     /tmp/ccsiBtO9.s:2963   .debug_loc:000000000000032f .LLST2
-     /tmp/ccsiBtO9.s:2977   .debug_loc:0000000000000368 .LLST3
-     /tmp/ccsiBtO9.s:3303   .debug_str:0000000000000874 .LASF138
-     /tmp/ccsiBtO9.s:3111   .debug_str:0000000000000280 .LASF139
-     /tmp/ccsiBtO9.s:64     .text:0000000000000034 .LFB47
-     /tmp/ccsiBtO9.s:138    .text:0000000000000084 .LFE47
-     /tmp/ccsiBtO9.s:3151   .debug_str:00000000000003af .LASF140
-     /tmp/ccsiBtO9.s:2984   .debug_loc:000000000000038b .LLST0
-GAS LISTING /tmp/ccsiBtO9.s 			page 23
+     /tmp/ccDERzz2.s:3493   .debug_str:000000000000070a .LASF87
+     /tmp/ccDERzz2.s:3277   .debug_str:00000000000000f8 .LASF88
+     /tmp/ccDERzz2.s:3263   .debug_str:00000000000000a7 .LASF89
+     /tmp/ccDERzz2.s:3267   .debug_str:00000000000000c2 .LASF90
+     /tmp/ccDERzz2.s:3561   .debug_str:0000000000000a13 .LASF91
+     /tmp/ccDERzz2.s:3505   .debug_str:0000000000000758 .LASF92
+     /tmp/ccDERzz2.s:3387   .debug_str:00000000000003e9 .LASF163
+     /tmp/ccDERzz2.s:3293   .debug_str:0000000000000158 .LASF93
+     /tmp/ccDERzz2.s:3405   .debug_str:000000000000048b .LASF94
+     /tmp/ccDERzz2.s:3457   .debug_str:00000000000005eb .LASF95
+     /tmp/ccDERzz2.s:3563   .debug_str:0000000000000a18 .LASF96
+     /tmp/ccDERzz2.s:3393   .debug_str:0000000000000416 .LASF97
+     /tmp/ccDERzz2.s:3557   .debug_str:00000000000009f6 .LASF120
+     /tmp/ccDERzz2.s:3515   .debug_str:000000000000085e .LASF122
+     /tmp/ccDERzz2.s:3511   .debug_str:0000000000000791 .LASF98
+     /tmp/ccDERzz2.s:3567   .debug_str:0000000000000a54 .LASF99
+     /tmp/ccDERzz2.s:3241   .debug_str:0000000000000022 .LASF100
+     /tmp/ccDERzz2.s:3443   .debug_str:0000000000000576 .LASF101
+     /tmp/ccDERzz2.s:3401   .debug_str:0000000000000466 .LASF102
+     /tmp/ccDERzz2.s:3339   .debug_str:0000000000000298 .LASF103
+     /tmp/ccDERzz2.s:3283   .debug_str:0000000000000121 .LASF104
+     /tmp/ccDERzz2.s:3335   .debug_str:0000000000000259 .LASF105
+     /tmp/ccDERzz2.s:3427   .debug_str:0000000000000516 .LASF106
+     /tmp/ccDERzz2.s:3481   .debug_str:00000000000006a1 .LASF107
+     /tmp/ccDERzz2.s:3373   .debug_str:000000000000038f .LASF108
+     /tmp/ccDERzz2.s:3371   .debug_str:0000000000000371 .LASF109
+     /tmp/ccDERzz2.s:3333   .debug_str:0000000000000247 .LASF110
+     /tmp/ccDERzz2.s:3549   .debug_str:000000000000099e .LASF111
+     /tmp/ccDERzz2.s:3307   .debug_str:00000000000001a6 .LASF112
+     /tmp/ccDERzz2.s:3531   .debug_str:00000000000008f2 .LASF113
+     /tmp/ccDERzz2.s:3527   .debug_str:00000000000008df .LASF114
+     /tmp/ccDERzz2.s:3415   .debug_str:00000000000004bf .LASF115
+     /tmp/ccDERzz2.s:3327   .debug_str:000000000000021b .LASF116
+     /tmp/ccDERzz2.s:3407   .debug_str:0000000000000490 .LASF117
+     /tmp/ccDERzz2.s:3331   .debug_str:000000000000023e .LASF118
+     /tmp/ccDERzz2.s:689    .text:0000000000000298 .LFB41
+     /tmp/ccDERzz2.s:727    .text:00000000000002c0 .LFE41
+     /tmp/ccDERzz2.s:3349   .debug_str:00000000000002fc .LASF119
+     /tmp/ccDERzz2.s:3249   .debug_str:000000000000004a .LASF121
+     /tmp/ccDERzz2.s:3261   .debug_str:000000000000009e .LASF123
+     /tmp/ccDERzz2.s:644    .text:000000000000026c .LFB40
+     /tmp/ccDERzz2.s:683    .text:0000000000000298 .LFE40
+     /tmp/ccDERzz2.s:3259   .debug_str:0000000000000093 .LASF124
+     /tmp/ccDERzz2.s:3467   .debug_str:000000000000062e .LASF125
+     /tmp/ccDERzz2.s:590    .text:000000000000023c .LFB39
+     /tmp/ccDERzz2.s:638    .text:000000000000026c .LFE39
+     /tmp/ccDERzz2.s:2982   .debug_loc:0000000000000000 .LLST17
+     /tmp/ccDERzz2.s:2996   .debug_loc:0000000000000039 .LLST18
+     /tmp/ccDERzz2.s:3301   .debug_str:0000000000000183 .LASF126
+     /tmp/ccDERzz2.s:3551   .debug_str:00000000000009ca .LASF127
+     /tmp/ccDERzz2.s:536    .text:000000000000020c .LFB38
+     /tmp/ccDERzz2.s:584    .text:000000000000023c .LFE38
+     /tmp/ccDERzz2.s:3003   .debug_loc:000000000000005c .LLST15
+     /tmp/ccDERzz2.s:3017   .debug_loc:0000000000000095 .LLST16
+     /tmp/ccDERzz2.s:3287   .debug_str:0000000000000137 .LASF128
+     /tmp/ccDERzz2.s:3279   .debug_str:0000000000000103 .LASF129
+     /tmp/ccDERzz2.s:482    .text:00000000000001dc .LFB37
+GAS LISTING /tmp/ccDERzz2.s 			page 25
 
 
-     /tmp/ccsiBtO9.s:3207   .debug_str:000000000000052f .LASF141
-     /tmp/ccsiBtO9.s:3009   .debug_loc:00000000000003ed .LLST1
-     /tmp/ccsiBtO9.s:3037   .debug_str:000000000000001e .LASF142
-     /tmp/ccsiBtO9.s:3133   .debug_str:000000000000030b .LASF144
-     /tmp/ccsiBtO9.s:41     .text:000000000000001c .LFB46
-     /tmp/ccsiBtO9.s:58     .text:0000000000000034 .LFE46
-     /tmp/ccsiBtO9.s:3229   .debug_str:00000000000005c7 .LASF143
-     /tmp/ccsiBtO9.s:3213   .debug_str:0000000000000550 .LASF145
-     /tmp/ccsiBtO9.s:10     .text:0000000000000000 .LFB45
-     /tmp/ccsiBtO9.s:35     .text:000000000000001c .LFE45
-     /tmp/ccsiBtO9.s:3129   .debug_str:00000000000002f3 .LASF157
-     /tmp/ccsiBtO9.s:3189   .debug_str:000000000000049a .LASF158
-     /tmp/ccsiBtO9.s:3031   .debug_str:0000000000000000 .LASF159
-     /tmp/ccsiBtO9.s:3205   .debug_str:0000000000000522 .LASF160
-     /tmp/ccsiBtO9.s:593    .text:000000000000023c .LVL32
-     /tmp/ccsiBtO9.s:625    .text:000000000000025c .LVL33
-     /tmp/ccsiBtO9.s:630    .text:0000000000000260 .LVL34
-     /tmp/ccsiBtO9.s:539    .text:000000000000020c .LVL29
-     /tmp/ccsiBtO9.s:571    .text:000000000000022c .LVL30
-     /tmp/ccsiBtO9.s:576    .text:0000000000000230 .LVL31
-     /tmp/ccsiBtO9.s:485    .text:00000000000001dc .LVL26
-     /tmp/ccsiBtO9.s:517    .text:00000000000001fc .LVL27
-     /tmp/ccsiBtO9.s:522    .text:0000000000000200 .LVL28
-     /tmp/ccsiBtO9.s:431    .text:00000000000001ac .LVL23
-     /tmp/ccsiBtO9.s:463    .text:00000000000001cc .LVL24
-     /tmp/ccsiBtO9.s:468    .text:00000000000001d0 .LVL25
-     /tmp/ccsiBtO9.s:372    .text:0000000000000178 .LVL20
-     /tmp/ccsiBtO9.s:409    .text:000000000000019c .LVL21
-     /tmp/ccsiBtO9.s:414    .text:00000000000001a0 .LVL22
-     /tmp/ccsiBtO9.s:350    .text:0000000000000168 .LVL18
-     /tmp/ccsiBtO9.s:355    .text:000000000000016c .LVL19
-     /tmp/ccsiBtO9.s:201    .text:00000000000000b4 .LVL8
-     /tmp/ccsiBtO9.s:222    .text:00000000000000e0 .LVL9
-     /tmp/ccsiBtO9.s:304    .text:000000000000013c .LVL16
-     /tmp/ccsiBtO9.s:308    .text:0000000000000144 .LVL17
-     /tmp/ccsiBtO9.s:301    .text:0000000000000138 .LVL15
-     /tmp/ccsiBtO9.s:298    .text:0000000000000134 .LVL14
-     /tmp/ccsiBtO9.s:280    .text:0000000000000124 .LVL12
-     /tmp/ccsiBtO9.s:285    .text:0000000000000128 .LVL13
-     /tmp/ccsiBtO9.s:147    .text:0000000000000084 .LVL5
-     /tmp/ccsiBtO9.s:179    .text:00000000000000a4 .LVL6
-     /tmp/ccsiBtO9.s:184    .text:00000000000000a8 .LVL7
-     /tmp/ccsiBtO9.s:67     .text:0000000000000034 .LVL0
-     /tmp/ccsiBtO9.s:83     .text:000000000000004c .LVL1
-     /tmp/ccsiBtO9.s:127    .text:0000000000000078 .LVL3
-     /tmp/ccsiBtO9.s:133    .text:000000000000007c .LVL4
-     /tmp/ccsiBtO9.s:116    .text:000000000000006c .LVL2
-     /tmp/ccsiBtO9.s:649    .debug_info:0000000000000000 .Ldebug_info0
+     /tmp/ccDERzz2.s:530    .text:000000000000020c .LFE37
+     /tmp/ccDERzz2.s:3024   .debug_loc:00000000000000b8 .LLST13
+     /tmp/ccDERzz2.s:3038   .debug_loc:00000000000000f1 .LLST14
+     /tmp/ccDERzz2.s:3289   .debug_str:0000000000000140 .LASF130
+     /tmp/ccDERzz2.s:3539   .debug_str:0000000000000941 .LASF131
+     /tmp/ccDERzz2.s:428    .text:00000000000001ac .LFB36
+     /tmp/ccDERzz2.s:476    .text:00000000000001dc .LFE36
+     /tmp/ccDERzz2.s:3245   .debug_str:0000000000000033 .LASF132
+     /tmp/ccDERzz2.s:3045   .debug_loc:0000000000000114 .LLST11
+     /tmp/ccDERzz2.s:3059   .debug_loc:000000000000014d .LLST12
+     /tmp/ccDERzz2.s:3541   .debug_str:0000000000000954 .LASF133
+     /tmp/ccDERzz2.s:3547   .debug_str:000000000000098a .LASF134
+     /tmp/ccDERzz2.s:369    .text:0000000000000178 .LFB35
+     /tmp/ccDERzz2.s:422    .text:00000000000001ac .LFE35
+     /tmp/ccDERzz2.s:3066   .debug_loc:0000000000000170 .LLST9
+     /tmp/ccDERzz2.s:3343   .debug_str:00000000000002c8 .LASF135
+     /tmp/ccDERzz2.s:3080   .debug_loc:00000000000001a9 .LLST10
+     /tmp/ccDERzz2.s:3257   .debug_str:0000000000000087 .LASF136
+     /tmp/ccDERzz2.s:3483   .debug_str:00000000000006c2 .LASF137
+     /tmp/ccDERzz2.s:323    .text:000000000000014c .LFB34
+     /tmp/ccDERzz2.s:363    .text:0000000000000178 .LFE34
+     /tmp/ccDERzz2.s:3087   .debug_loc:00000000000001cc .LLST8
+     /tmp/ccDERzz2.s:3309   .debug_str:00000000000001bc .LASF138
+     /tmp/ccDERzz2.s:3565   .debug_str:0000000000000a2f .LASF139
+     /tmp/ccDERzz2.s:198    .text:00000000000000b4 .LFB33
+     /tmp/ccDERzz2.s:317    .text:000000000000014c .LFE33
+     /tmp/ccDERzz2.s:3094   .debug_loc:00000000000001ef .LLST4
+     /tmp/ccDERzz2.s:3265   .debug_str:00000000000000b4 .LASF140
+     /tmp/ccDERzz2.s:3116   .debug_loc:000000000000024e .LLST5
+     /tmp/ccDERzz2.s:3138   .debug_loc:00000000000002ad .LLST6
+     /tmp/ccDERzz2.s:237    .text:0000000000000100 .LBB3
+     /tmp/ccDERzz2.s:287    .text:0000000000000128 .LBE3
+     /tmp/ccDERzz2.s:3160   .debug_loc:000000000000030c .LLST7
+     /tmp/ccDERzz2.s:224    .text:00000000000000e8 .LVL10
+     /tmp/ccDERzz2.s:230    .text:00000000000000f8 .LVL11
+     /tmp/ccDERzz2.s:3465   .debug_str:0000000000000625 .LASF141
+     /tmp/ccDERzz2.s:3555   .debug_str:00000000000009e8 .LASF142
+     /tmp/ccDERzz2.s:144    .text:0000000000000084 .LFB32
+     /tmp/ccDERzz2.s:192    .text:00000000000000b4 .LFE32
+     /tmp/ccDERzz2.s:3167   .debug_loc:000000000000032f .LLST2
+     /tmp/ccDERzz2.s:3181   .debug_loc:0000000000000368 .LLST3
+     /tmp/ccDERzz2.s:3537   .debug_str:0000000000000937 .LASF143
+     /tmp/ccDERzz2.s:3291   .debug_str:000000000000014a .LASF144
+     /tmp/ccDERzz2.s:64     .text:0000000000000034 .LFB31
+     /tmp/ccDERzz2.s:138    .text:0000000000000084 .LFE31
+     /tmp/ccDERzz2.s:3321   .debug_str:00000000000001fd .LASF145
+     /tmp/ccDERzz2.s:3188   .debug_loc:000000000000038b .LLST0
+     /tmp/ccDERzz2.s:3491   .debug_str:0000000000000700 .LASF146
+     /tmp/ccDERzz2.s:3213   .debug_loc:00000000000003ed .LLST1
+     /tmp/ccDERzz2.s:3455   .debug_str:00000000000005e3 .LASF147
+     /tmp/ccDERzz2.s:3411   .debug_str:000000000000049f .LASF149
+     /tmp/ccDERzz2.s:41     .text:000000000000001c .LFB30
+     /tmp/ccDERzz2.s:58     .text:0000000000000034 .LFE30
+     /tmp/ccDERzz2.s:3433   .debug_str:0000000000000535 .LASF148
+     /tmp/ccDERzz2.s:3281   .debug_str:0000000000000115 .LASF150
+     /tmp/ccDERzz2.s:10     .text:0000000000000000 .LFB29
+     /tmp/ccDERzz2.s:35     .text:000000000000001c .LFE29
+GAS LISTING /tmp/ccDERzz2.s 			page 26
+
+
+     /tmp/ccDERzz2.s:3497   .debug_str:0000000000000728 .LASF164
+     /tmp/ccDERzz2.s:3517   .debug_str:0000000000000879 .LASF165
+     /tmp/ccDERzz2.s:3525   .debug_str:00000000000008cd .LASF166
+     /tmp/ccDERzz2.s:3499   .debug_str:000000000000072e .LASF167
+     /tmp/ccDERzz2.s:593    .text:000000000000023c .LVL32
+     /tmp/ccDERzz2.s:625    .text:000000000000025c .LVL33
+     /tmp/ccDERzz2.s:630    .text:0000000000000260 .LVL34
+     /tmp/ccDERzz2.s:539    .text:000000000000020c .LVL29
+     /tmp/ccDERzz2.s:571    .text:000000000000022c .LVL30
+     /tmp/ccDERzz2.s:576    .text:0000000000000230 .LVL31
+     /tmp/ccDERzz2.s:485    .text:00000000000001dc .LVL26
+     /tmp/ccDERzz2.s:517    .text:00000000000001fc .LVL27
+     /tmp/ccDERzz2.s:522    .text:0000000000000200 .LVL28
+     /tmp/ccDERzz2.s:431    .text:00000000000001ac .LVL23
+     /tmp/ccDERzz2.s:463    .text:00000000000001cc .LVL24
+     /tmp/ccDERzz2.s:468    .text:00000000000001d0 .LVL25
+     /tmp/ccDERzz2.s:372    .text:0000000000000178 .LVL20
+     /tmp/ccDERzz2.s:409    .text:000000000000019c .LVL21
+     /tmp/ccDERzz2.s:414    .text:00000000000001a0 .LVL22
+     /tmp/ccDERzz2.s:350    .text:0000000000000168 .LVL18
+     /tmp/ccDERzz2.s:355    .text:000000000000016c .LVL19
+     /tmp/ccDERzz2.s:201    .text:00000000000000b4 .LVL8
+     /tmp/ccDERzz2.s:222    .text:00000000000000e0 .LVL9
+     /tmp/ccDERzz2.s:304    .text:000000000000013c .LVL16
+     /tmp/ccDERzz2.s:308    .text:0000000000000144 .LVL17
+     /tmp/ccDERzz2.s:301    .text:0000000000000138 .LVL15
+     /tmp/ccDERzz2.s:298    .text:0000000000000134 .LVL14
+     /tmp/ccDERzz2.s:280    .text:0000000000000124 .LVL12
+     /tmp/ccDERzz2.s:285    .text:0000000000000128 .LVL13
+     /tmp/ccDERzz2.s:147    .text:0000000000000084 .LVL5
+     /tmp/ccDERzz2.s:179    .text:00000000000000a4 .LVL6
+     /tmp/ccDERzz2.s:184    .text:00000000000000a8 .LVL7
+     /tmp/ccDERzz2.s:67     .text:0000000000000034 .LVL0
+     /tmp/ccDERzz2.s:83     .text:000000000000004c .LVL1
+     /tmp/ccDERzz2.s:127    .text:0000000000000078 .LVL3
+     /tmp/ccDERzz2.s:133    .text:000000000000007c .LVL4
+     /tmp/ccDERzz2.s:116    .text:000000000000006c .LVL2
+     /tmp/ccDERzz2.s:738    .debug_info:0000000000000000 .Ldebug_info0
 
 UNDEFINED SYMBOLS
 _Znam

@@ -6,13 +6,28 @@
 #include "../h/tcb.hpp"
 #include "../h/print.hpp"
 #include "../h/syscall_c.h"
+#include "../h/riscv.hpp"
 
-void workerBodyA()
+void workerBodyA(void* args)
 {
     for (uint64 i = 0; i < 10; i++)
     {
-        if(i == 5)
+        if(i == 5) {
             time_sleep(50);
+//            putc(Riscv::ttt);
+//            while(true)
+//                putc(Riscv::buff2.take());
+//            putc('o');
+//            putc('a');
+//            putc('b');
+//            putc('v');
+//            putc('d');
+//            putc('c');
+//            putc('q');
+
+            char c = getc();
+            putc(c);
+        }
         printString("A: i=");
         printInteger(i);
         printString("\n");
