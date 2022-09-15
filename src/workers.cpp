@@ -50,7 +50,7 @@ void workerBodyA(void* args)
 //    time_sleep(50);
 }
 
-void workerBodyB()
+void workerBodyB(void*)
 {
     for (uint64 i = 0; i < 16; i++)
     {
@@ -75,7 +75,7 @@ static uint64 fibonacci(uint64 n)
     return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
-void workerBodyC()
+void workerBodyC(void*)
 {
     uint8 i = 0;
     for (; i < 3; i++)
@@ -110,7 +110,7 @@ void workerBodyC()
 //    _thread::yield();
 }
 
-void workerBodyD()
+void workerBodyD(void*)
 {
     uint8 i = 10;
     for (; i < 13; i++)

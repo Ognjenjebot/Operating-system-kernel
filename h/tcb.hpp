@@ -32,17 +32,20 @@ public:
 
     void dblck();
 
+    void start() { Scheduler::put(this); }
+
     using Body = void (*)(void*);
 
     //mickov poziv, i poziv za projekat
     static _thread *createThread(Body body);
-    static int createThread(thread_t*, Body, void*, void*);
+    static int createThread(thread_t*, Body, void*, void*, bool);
 
     static void yield();
 
     static _thread *running;
 
-    static void consoleWrite();
+    static void consoleWrite(void*);
+    static void idleDeletion();
     static void dispatch();
 
 private:
@@ -61,7 +64,7 @@ private:
 
 
 
-    _thread(Body body, void *args, void *stackk) :
+    _thread(Body body, void *args, void *stackk, bool t) :
             body(body),
             stack(body != nullptr ? (uint64*)stackk : nullptr),
             context({(uint64) &threadWrapper,
@@ -72,7 +75,8 @@ private:
             args(args)
     {
         if (body != nullptr) {
-            Scheduler::put(this);
+            if(t)
+                Scheduler::put(this);
         }
     }
 

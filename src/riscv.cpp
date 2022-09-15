@@ -8,7 +8,7 @@
 #include "../lib/mem.h"
 
 //zasto se ne uvozi body iz tcb.hpp???(using vazi samo za fajl u kom je definisan?)
-using Body = void (*)();
+using Body = void (*)(void*);
 List<_thread> Riscv::sleepingThreads;
 KeyboardBuffer Riscv::buff1, Riscv::buff2;
 char Riscv::ttt;
@@ -68,8 +68,8 @@ void Riscv::handleSupervisorTrap()
 
             __asm__ volatile("mv %0, t2" : "=r" (args));
             __asm__ volatile("mv %0, t3" : "=r" (stack));
-            printInteger((uint64)stack);
-            int ret = _thread::createThread(handle, body, args, stack);
+//            printInteger((uint64)stack);
+            int ret = _thread::createThread(handle, body, args, stack, true);
             __asm__ volatile("mv a0, %0" : : "r" (ret));
 
         }else if(code == 0x12){
@@ -80,7 +80,7 @@ void Riscv::handleSupervisorTrap()
             else
                 __asm__ volatile("mv a0, zero");
         }else if(code == 0x13){
-            //THREAD_DISPACH
+            _thread::dispatch();
 
         }else if(code == 0x21){
             //SEM_OPEN
@@ -130,7 +130,35 @@ void Riscv::handleSupervisorTrap()
 //            *((char*)CONSOLE_TX_DATA) = c;
             buff1.append(c);
 
-        }else{
+        }else if(code == 0x43){
+            //THREAD_INIT
+            thread_t *handle;
+            Body body;
+            void* args;
+            void* stack;
+            __asm__ volatile("mv %0, a1" : "=r" (handle));
+            __asm__ volatile("mv %0, a2" : "=r" (body));
+//            __asm__ volatile("mv %0, a3" : "=r" (args));
+//            __asm__ volatile("mv %0, a4" : "=r" (stack));
+
+            //vrednosti registara a3 i a4 se pobrkaju skroz, pa cu  njih uzeti sa steka
+
+            //radi sa fp umesto sp, nzm zasto, proveriti posle
+            __asm__ volatile("ld t2, 104(fp)");
+            __asm__ volatile("ld t3, 112(fp)");
+
+            __asm__ volatile("mv %0, t2" : "=r" (args));
+            __asm__ volatile("mv %0, t3" : "=r" (stack));
+//            printInteger((uint64)stack);
+            int ret = _thread::createThread(handle, body, args, stack, false);
+            __asm__ volatile("mv a0, %0" : : "r" (ret));
+
+        }else if(code == 0x44){
+            thread_t handle;
+            __asm__ volatile("mv %0, a1" : "=r" (handle));
+            handle->start();
+        }
+        else{
             _thread::timeSliceCounter = 0;
             _thread::dispatch();
         }

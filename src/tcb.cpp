@@ -6,6 +6,7 @@
 #include "../h/riscv.hpp"
 
 
+
 _thread *_thread::running = nullptr;
 
 uint64 _thread::timeSliceCounter = 0;
@@ -23,9 +24,9 @@ _thread *_thread::createThread(Body body)
     return new _thread(body, TIME_SLICE);
 }
 //poziv za projekat
-int _thread::createThread(thread_t* handle, Body body, void *args, void *stack)
+int _thread::createThread(thread_t* handle, Body body, void *args, void *stack, bool t)
 {
-    *handle = new _thread(body, args, stack);
+    *handle = new _thread(body, args, stack, t);
     if(*handle != nullptr)
         return 0;
     else
@@ -64,13 +65,13 @@ void _thread::threadWrapper()
 
 int _thread::threadStop(){
     running->setFinished(true);
+    dispatch();
 //    if(mem_free(running->stack) != 0)
 //        return -3;
 //    else{
 //        _thread::yield();
 //        return 0;
 //    }
-
 //    delete []running->stack;
 //    nzm da se brise nit ili se samo zaustavlja
 return 0;
@@ -89,7 +90,7 @@ int _thread::sleep(time_t time) {
     return 0; //TODO povratna vrednost!!!
 }
 
-void _thread::consoleWrite() {
+void _thread::consoleWrite(void* t) {
     {
         while(true){
             char c = Riscv::buff1.take();
@@ -100,3 +101,14 @@ void _thread::consoleWrite() {
 
     }
 }
+
+void _thread::idleDeletion() {
+    while(true){
+        _thread *t = Scheduler::readyThreadQueue.traverseList();
+        if(t->isFinished())
+            delete t;
+        dispatch();
+    }
+}
+
+

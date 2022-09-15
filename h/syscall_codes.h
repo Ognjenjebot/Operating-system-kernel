@@ -17,7 +17,9 @@ enum call_codes {
     SEM_SIGNAL = 0x24,
     THREAD_SLEEP = 0x31,
     GETC = 0x41,
-    PUTC = 0x42
+    PUTC = 0x42,
+    THREAD_INIT = 0x43,
+    THREAD_START = 0x44
 };
 
 #endif //PROJECT_BASE_SYSCALL_CODES_H

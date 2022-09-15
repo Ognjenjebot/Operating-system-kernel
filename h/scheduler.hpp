@@ -17,7 +17,7 @@ public:
     static _thread *get();
 
     static void put(_thread *ccb);
-
+    friend class _thread;
 };
 
 #endif //OS1_VEZBE07_RISCV_CONTEXT_SWITCH_2_INTERRUPT_SCHEDULER_HPP

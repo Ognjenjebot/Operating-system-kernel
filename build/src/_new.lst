@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccP3cEgu.s 			page 1
+GAS LISTING /tmp/ccgaeXAw.s 			page 1
 
 
    1              		.file	"_new.cpp"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccP3cEgu.s 			page 1
   43              	.LFB1:
   15:src/_new.cpp  **** 
   16:src/_new.cpp  **** void *operator new[](size_t n)
-GAS LISTING /tmp/ccP3cEgu.s 			page 2
+GAS LISTING /tmp/ccgaeXAw.s 			page 2
 
 
   17:src/_new.cpp  **** {
@@ -118,7 +118,7 @@ GAS LISTING /tmp/ccP3cEgu.s 			page 1
   91      E7800000 
   92              	.LVL5:
   24:src/_new.cpp  **** }
-GAS LISTING /tmp/ccP3cEgu.s 			page 3
+GAS LISTING /tmp/ccgaeXAw.s 			page 3
 
 
   93              		.loc 1 24 1
@@ -178,7 +178,7 @@ GAS LISTING /tmp/ccP3cEgu.s 			page 1
  143 009c 67800000 		jr	ra
  144              		.cfi_endproc
  145              	.LFE3:
-GAS LISTING /tmp/ccP3cEgu.s 			page 4
+GAS LISTING /tmp/ccgaeXAw.s 			page 4
 
 
  146              		.section	.gcc_except_table
@@ -197,136 +197,136 @@ GAS LISTING /tmp/ccP3cEgu.s 			page 1
  795      00000000 
  796              		.ident	"GCC: (Ubuntu 9.4.0-1ubuntu1~20.04) 9.4.0"
  797              		.section	.note.GNU-stack,"",@progbits
-GAS LISTING /tmp/ccP3cEgu.s 			page 5
+GAS LISTING /tmp/ccgaeXAw.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 _new.cpp
-     /tmp/ccP3cEgu.s:9      .text:0000000000000000 _Znwm
-     /tmp/ccP3cEgu.s:13     .text:0000000000000000 .L0 
-     /tmp/ccP3cEgu.s:15     .text:0000000000000000 .L0 
-     /tmp/ccP3cEgu.s:16     .text:0000000000000004 .L0 
-     /tmp/ccP3cEgu.s:19     .text:000000000000000c .L0 
-     /tmp/ccP3cEgu.s:20     .text:000000000000000c .L0 
-     /tmp/ccP3cEgu.s:22     .text:0000000000000010 .L0 
-     /tmp/ccP3cEgu.s:24     .text:0000000000000010 .L0 
-     /tmp/ccP3cEgu.s:25     .text:0000000000000010 .L0 
-     /tmp/ccP3cEgu.s:28     .text:0000000000000018 .L0 
-     /tmp/ccP3cEgu.s:29     .text:000000000000001c .L0 
-     /tmp/ccP3cEgu.s:31     .text:0000000000000020 .L0 
-     /tmp/ccP3cEgu.s:32     .text:0000000000000020 .L0 
-     /tmp/ccP3cEgu.s:34     .text:0000000000000024 .L0 
-     /tmp/ccP3cEgu.s:36     .text:0000000000000028 .L0 
-     /tmp/ccP3cEgu.s:42     .text:0000000000000028 _Znam
-     /tmp/ccP3cEgu.s:45     .text:0000000000000028 .L0 
-     /tmp/ccP3cEgu.s:47     .text:0000000000000028 .L0 
-     /tmp/ccP3cEgu.s:48     .text:000000000000002c .L0 
-     /tmp/ccP3cEgu.s:51     .text:0000000000000034 .L0 
-     /tmp/ccP3cEgu.s:52     .text:0000000000000034 .L0 
-     /tmp/ccP3cEgu.s:54     .text:0000000000000038 .L0 
-     /tmp/ccP3cEgu.s:56     .text:0000000000000038 .L0 
-     /tmp/ccP3cEgu.s:57     .text:0000000000000038 .L0 
-     /tmp/ccP3cEgu.s:60     .text:0000000000000040 .L0 
-     /tmp/ccP3cEgu.s:61     .text:0000000000000044 .L0 
-     /tmp/ccP3cEgu.s:63     .text:0000000000000048 .L0 
-     /tmp/ccP3cEgu.s:64     .text:0000000000000048 .L0 
-     /tmp/ccP3cEgu.s:66     .text:000000000000004c .L0 
-     /tmp/ccP3cEgu.s:68     .text:0000000000000050 .L0 
-     /tmp/ccP3cEgu.s:74     .text:0000000000000050 _ZdlPv
-     /tmp/ccP3cEgu.s:77     .text:0000000000000050 .L0 
-     /tmp/ccP3cEgu.s:794    .data.rel.local.DW.ref.__gxx_personality_v0:0000000000000000 DW.ref.__gxx_personality_v0
-     /tmp/ccP3cEgu.s:81     .text:0000000000000050 .L0 
-     /tmp/ccP3cEgu.s:82     .text:0000000000000054 .L0 
-     /tmp/ccP3cEgu.s:85     .text:000000000000005c .L0 
-     /tmp/ccP3cEgu.s:86     .text:000000000000005c .L0 
-     /tmp/ccP3cEgu.s:88     .text:0000000000000060 .L0 
-     /tmp/ccP3cEgu.s:90     .text:0000000000000060 .L0 
-     /tmp/ccP3cEgu.s:91     .text:0000000000000060 .L0 
-     /tmp/ccP3cEgu.s:94     .text:0000000000000068 .L0 
-     /tmp/ccP3cEgu.s:95     .text:000000000000006c .L0 
-     /tmp/ccP3cEgu.s:97     .text:0000000000000070 .L0 
-     /tmp/ccP3cEgu.s:98     .text:0000000000000070 .L0 
-     /tmp/ccP3cEgu.s:100    .text:0000000000000074 .L0 
-     /tmp/ccP3cEgu.s:102    .text:0000000000000078 .L0 
-     /tmp/ccP3cEgu.s:116    .text:0000000000000078 _ZdaPv
-     /tmp/ccP3cEgu.s:119    .text:0000000000000078 .L0 
-     /tmp/ccP3cEgu.s:123    .text:0000000000000078 .L0 
-     /tmp/ccP3cEgu.s:124    .text:000000000000007c .L0 
-     /tmp/ccP3cEgu.s:127    .text:0000000000000084 .L0 
-     /tmp/ccP3cEgu.s:128    .text:0000000000000084 .L0 
-     /tmp/ccP3cEgu.s:130    .text:0000000000000088 .L0 
-     /tmp/ccP3cEgu.s:132    .text:0000000000000088 .L0 
-     /tmp/ccP3cEgu.s:133    .text:0000000000000088 .L0 
-GAS LISTING /tmp/ccP3cEgu.s 			page 6
+     /tmp/ccgaeXAw.s:9      .text:0000000000000000 _Znwm
+     /tmp/ccgaeXAw.s:13     .text:0000000000000000 .L0 
+     /tmp/ccgaeXAw.s:15     .text:0000000000000000 .L0 
+     /tmp/ccgaeXAw.s:16     .text:0000000000000004 .L0 
+     /tmp/ccgaeXAw.s:19     .text:000000000000000c .L0 
+     /tmp/ccgaeXAw.s:20     .text:000000000000000c .L0 
+     /tmp/ccgaeXAw.s:22     .text:0000000000000010 .L0 
+     /tmp/ccgaeXAw.s:24     .text:0000000000000010 .L0 
+     /tmp/ccgaeXAw.s:25     .text:0000000000000010 .L0 
+     /tmp/ccgaeXAw.s:28     .text:0000000000000018 .L0 
+     /tmp/ccgaeXAw.s:29     .text:000000000000001c .L0 
+     /tmp/ccgaeXAw.s:31     .text:0000000000000020 .L0 
+     /tmp/ccgaeXAw.s:32     .text:0000000000000020 .L0 
+     /tmp/ccgaeXAw.s:34     .text:0000000000000024 .L0 
+     /tmp/ccgaeXAw.s:36     .text:0000000000000028 .L0 
+     /tmp/ccgaeXAw.s:42     .text:0000000000000028 _Znam
+     /tmp/ccgaeXAw.s:45     .text:0000000000000028 .L0 
+     /tmp/ccgaeXAw.s:47     .text:0000000000000028 .L0 
+     /tmp/ccgaeXAw.s:48     .text:000000000000002c .L0 
+     /tmp/ccgaeXAw.s:51     .text:0000000000000034 .L0 
+     /tmp/ccgaeXAw.s:52     .text:0000000000000034 .L0 
+     /tmp/ccgaeXAw.s:54     .text:0000000000000038 .L0 
+     /tmp/ccgaeXAw.s:56     .text:0000000000000038 .L0 
+     /tmp/ccgaeXAw.s:57     .text:0000000000000038 .L0 
+     /tmp/ccgaeXAw.s:60     .text:0000000000000040 .L0 
+     /tmp/ccgaeXAw.s:61     .text:0000000000000044 .L0 
+     /tmp/ccgaeXAw.s:63     .text:0000000000000048 .L0 
+     /tmp/ccgaeXAw.s:64     .text:0000000000000048 .L0 
+     /tmp/ccgaeXAw.s:66     .text:000000000000004c .L0 
+     /tmp/ccgaeXAw.s:68     .text:0000000000000050 .L0 
+     /tmp/ccgaeXAw.s:74     .text:0000000000000050 _ZdlPv
+     /tmp/ccgaeXAw.s:77     .text:0000000000000050 .L0 
+     /tmp/ccgaeXAw.s:794    .data.rel.local.DW.ref.__gxx_personality_v0:0000000000000000 DW.ref.__gxx_personality_v0
+     /tmp/ccgaeXAw.s:81     .text:0000000000000050 .L0 
+     /tmp/ccgaeXAw.s:82     .text:0000000000000054 .L0 
+     /tmp/ccgaeXAw.s:85     .text:000000000000005c .L0 
+     /tmp/ccgaeXAw.s:86     .text:000000000000005c .L0 
+     /tmp/ccgaeXAw.s:88     .text:0000000000000060 .L0 
+     /tmp/ccgaeXAw.s:90     .text:0000000000000060 .L0 
+     /tmp/ccgaeXAw.s:91     .text:0000000000000060 .L0 
+     /tmp/ccgaeXAw.s:94     .text:0000000000000068 .L0 
+     /tmp/ccgaeXAw.s:95     .text:000000000000006c .L0 
+     /tmp/ccgaeXAw.s:97     .text:0000000000000070 .L0 
+     /tmp/ccgaeXAw.s:98     .text:0000000000000070 .L0 
+     /tmp/ccgaeXAw.s:100    .text:0000000000000074 .L0 
+     /tmp/ccgaeXAw.s:102    .text:0000000000000078 .L0 
+     /tmp/ccgaeXAw.s:116    .text:0000000000000078 _ZdaPv
+     /tmp/ccgaeXAw.s:119    .text:0000000000000078 .L0 
+     /tmp/ccgaeXAw.s:123    .text:0000000000000078 .L0 
+     /tmp/ccgaeXAw.s:124    .text:000000000000007c .L0 
+     /tmp/ccgaeXAw.s:127    .text:0000000000000084 .L0 
+     /tmp/ccgaeXAw.s:128    .text:0000000000000084 .L0 
+     /tmp/ccgaeXAw.s:130    .text:0000000000000088 .L0 
+     /tmp/ccgaeXAw.s:132    .text:0000000000000088 .L0 
+     /tmp/ccgaeXAw.s:133    .text:0000000000000088 .L0 
+GAS LISTING /tmp/ccgaeXAw.s 			page 6
 
 
-     /tmp/ccP3cEgu.s:136    .text:0000000000000090 .L0 
-     /tmp/ccP3cEgu.s:137    .text:0000000000000094 .L0 
-     /tmp/ccP3cEgu.s:139    .text:0000000000000098 .L0 
-     /tmp/ccP3cEgu.s:140    .text:0000000000000098 .L0 
-     /tmp/ccP3cEgu.s:142    .text:000000000000009c .L0 
-     /tmp/ccP3cEgu.s:144    .text:00000000000000a0 .L0 
-     /tmp/ccP3cEgu.s:157    .text:00000000000000a0 .L0 
-     /tmp/ccP3cEgu.s:417    .debug_abbrev:0000000000000000 .Ldebug_abbrev0
-     /tmp/ccP3cEgu.s:774    .debug_str:000000000000015b .LASF27
-     /tmp/ccP3cEgu.s:786    .debug_str:000000000000025b .LASF28
-     /tmp/ccP3cEgu.s:752    .debug_str:000000000000009b .LASF29
-     /tmp/ccP3cEgu.s:5      .text:0000000000000000 .Ltext0
-     /tmp/ccP3cEgu.s:154    .text:00000000000000a0 .Letext0
-     /tmp/ccP3cEgu.s:726    .debug_line:0000000000000000 .Ldebug_line0
-     /tmp/ccP3cEgu.s:734    .debug_str:0000000000000027 .LASF0
-     /tmp/ccP3cEgu.s:772    .debug_str:0000000000000148 .LASF1
-     /tmp/ccP3cEgu.s:758    .debug_str:00000000000000d5 .LASF2
-     /tmp/ccP3cEgu.s:750    .debug_str:0000000000000094 .LASF4
-     /tmp/ccP3cEgu.s:746    .debug_str:000000000000006f .LASF3
-     /tmp/ccP3cEgu.s:740    .debug_str:0000000000000051 .LASF5
-     /tmp/ccP3cEgu.s:748    .debug_str:0000000000000081 .LASF6
-     /tmp/ccP3cEgu.s:770    .debug_str:0000000000000135 .LASF7
-     /tmp/ccP3cEgu.s:782    .debug_str:000000000000023b .LASF8
-     /tmp/ccP3cEgu.s:736    .debug_str:0000000000000034 .LASF9
-     /tmp/ccP3cEgu.s:738    .debug_str:0000000000000042 .LASF10
-     /tmp/ccP3cEgu.s:776    .debug_str:000000000000021f .LASF11
-     /tmp/ccP3cEgu.s:742    .debug_str:0000000000000058 .LASF12
-     /tmp/ccP3cEgu.s:784    .debug_str:000000000000024b .LASF13
-     /tmp/ccP3cEgu.s:756    .debug_str:00000000000000c9 .LASF14
-     /tmp/ccP3cEgu.s:766    .debug_str:0000000000000119 .LASF15
-     /tmp/ccP3cEgu.s:762    .debug_str:00000000000000f6 .LASF16
-     /tmp/ccP3cEgu.s:760    .debug_str:00000000000000e3 .LASF17
-     /tmp/ccP3cEgu.s:778    .debug_str:000000000000022e .LASF19
-     /tmp/ccP3cEgu.s:117    .text:0000000000000078 .LFB3
-     /tmp/ccP3cEgu.s:145    .text:00000000000000a0 .LFE3
-     /tmp/ccP3cEgu.s:657    .debug_loc:0000000000000000 .LLST3
-     /tmp/ccP3cEgu.s:134    .text:0000000000000090 .LVL7
-     /tmp/ccP3cEgu.s:754    .debug_str:00000000000000b9 .LASF18
-     /tmp/ccP3cEgu.s:744    .debug_str:0000000000000068 .LASF20
-     /tmp/ccP3cEgu.s:75     .text:0000000000000050 .LFB2
-     /tmp/ccP3cEgu.s:103    .text:0000000000000078 .LFE2
-     /tmp/ccP3cEgu.s:671    .debug_loc:0000000000000039 .LLST2
-     /tmp/ccP3cEgu.s:92     .text:0000000000000068 .LVL5
-     /tmp/ccP3cEgu.s:730    .debug_str:000000000000000b .LASF21
-     /tmp/ccP3cEgu.s:768    .debug_str:000000000000012f .LASF23
-     /tmp/ccP3cEgu.s:43     .text:0000000000000028 .LFB1
-     /tmp/ccP3cEgu.s:69     .text:0000000000000050 .LFE1
-     /tmp/ccP3cEgu.s:685    .debug_loc:0000000000000072 .LLST1
-     /tmp/ccP3cEgu.s:58     .text:0000000000000040 .LVL3
-     /tmp/ccP3cEgu.s:764    .debug_str:000000000000010c .LASF22
-     /tmp/ccP3cEgu.s:780    .debug_str:0000000000000235 .LASF24
-     /tmp/ccP3cEgu.s:10     .text:0000000000000000 .LFB0
-     /tmp/ccP3cEgu.s:37     .text:0000000000000028 .LFE0
-     /tmp/ccP3cEgu.s:699    .debug_loc:00000000000000ab .LLST0
-     /tmp/ccP3cEgu.s:26     .text:0000000000000018 .LVL1
-     /tmp/ccP3cEgu.s:728    .debug_str:0000000000000000 .LASF25
-     /tmp/ccP3cEgu.s:732    .debug_str:000000000000001b .LASF26
-GAS LISTING /tmp/ccP3cEgu.s 			page 7
+     /tmp/ccgaeXAw.s:136    .text:0000000000000090 .L0 
+     /tmp/ccgaeXAw.s:137    .text:0000000000000094 .L0 
+     /tmp/ccgaeXAw.s:139    .text:0000000000000098 .L0 
+     /tmp/ccgaeXAw.s:140    .text:0000000000000098 .L0 
+     /tmp/ccgaeXAw.s:142    .text:000000000000009c .L0 
+     /tmp/ccgaeXAw.s:144    .text:00000000000000a0 .L0 
+     /tmp/ccgaeXAw.s:157    .text:00000000000000a0 .L0 
+     /tmp/ccgaeXAw.s:417    .debug_abbrev:0000000000000000 .Ldebug_abbrev0
+     /tmp/ccgaeXAw.s:774    .debug_str:000000000000015b .LASF27
+     /tmp/ccgaeXAw.s:786    .debug_str:000000000000025b .LASF28
+     /tmp/ccgaeXAw.s:752    .debug_str:000000000000009b .LASF29
+     /tmp/ccgaeXAw.s:5      .text:0000000000000000 .Ltext0
+     /tmp/ccgaeXAw.s:154    .text:00000000000000a0 .Letext0
+     /tmp/ccgaeXAw.s:726    .debug_line:0000000000000000 .Ldebug_line0
+     /tmp/ccgaeXAw.s:734    .debug_str:0000000000000027 .LASF0
+     /tmp/ccgaeXAw.s:772    .debug_str:0000000000000148 .LASF1
+     /tmp/ccgaeXAw.s:758    .debug_str:00000000000000d5 .LASF2
+     /tmp/ccgaeXAw.s:750    .debug_str:0000000000000094 .LASF4
+     /tmp/ccgaeXAw.s:746    .debug_str:000000000000006f .LASF3
+     /tmp/ccgaeXAw.s:740    .debug_str:0000000000000051 .LASF5
+     /tmp/ccgaeXAw.s:748    .debug_str:0000000000000081 .LASF6
+     /tmp/ccgaeXAw.s:770    .debug_str:0000000000000135 .LASF7
+     /tmp/ccgaeXAw.s:782    .debug_str:000000000000023b .LASF8
+     /tmp/ccgaeXAw.s:736    .debug_str:0000000000000034 .LASF9
+     /tmp/ccgaeXAw.s:738    .debug_str:0000000000000042 .LASF10
+     /tmp/ccgaeXAw.s:776    .debug_str:000000000000021f .LASF11
+     /tmp/ccgaeXAw.s:742    .debug_str:0000000000000058 .LASF12
+     /tmp/ccgaeXAw.s:784    .debug_str:000000000000024b .LASF13
+     /tmp/ccgaeXAw.s:756    .debug_str:00000000000000c9 .LASF14
+     /tmp/ccgaeXAw.s:766    .debug_str:0000000000000119 .LASF15
+     /tmp/ccgaeXAw.s:762    .debug_str:00000000000000f6 .LASF16
+     /tmp/ccgaeXAw.s:760    .debug_str:00000000000000e3 .LASF17
+     /tmp/ccgaeXAw.s:778    .debug_str:000000000000022e .LASF19
+     /tmp/ccgaeXAw.s:117    .text:0000000000000078 .LFB3
+     /tmp/ccgaeXAw.s:145    .text:00000000000000a0 .LFE3
+     /tmp/ccgaeXAw.s:657    .debug_loc:0000000000000000 .LLST3
+     /tmp/ccgaeXAw.s:134    .text:0000000000000090 .LVL7
+     /tmp/ccgaeXAw.s:754    .debug_str:00000000000000b9 .LASF18
+     /tmp/ccgaeXAw.s:744    .debug_str:0000000000000068 .LASF20
+     /tmp/ccgaeXAw.s:75     .text:0000000000000050 .LFB2
+     /tmp/ccgaeXAw.s:103    .text:0000000000000078 .LFE2
+     /tmp/ccgaeXAw.s:671    .debug_loc:0000000000000039 .LLST2
+     /tmp/ccgaeXAw.s:92     .text:0000000000000068 .LVL5
+     /tmp/ccgaeXAw.s:730    .debug_str:000000000000000b .LASF21
+     /tmp/ccgaeXAw.s:768    .debug_str:000000000000012f .LASF23
+     /tmp/ccgaeXAw.s:43     .text:0000000000000028 .LFB1
+     /tmp/ccgaeXAw.s:69     .text:0000000000000050 .LFE1
+     /tmp/ccgaeXAw.s:685    .debug_loc:0000000000000072 .LLST1
+     /tmp/ccgaeXAw.s:58     .text:0000000000000040 .LVL3
+     /tmp/ccgaeXAw.s:764    .debug_str:000000000000010c .LASF22
+     /tmp/ccgaeXAw.s:780    .debug_str:0000000000000235 .LASF24
+     /tmp/ccgaeXAw.s:10     .text:0000000000000000 .LFB0
+     /tmp/ccgaeXAw.s:37     .text:0000000000000028 .LFE0
+     /tmp/ccgaeXAw.s:699    .debug_loc:00000000000000ab .LLST0
+     /tmp/ccgaeXAw.s:26     .text:0000000000000018 .LVL1
+     /tmp/ccgaeXAw.s:728    .debug_str:0000000000000000 .LASF25
+     /tmp/ccgaeXAw.s:732    .debug_str:000000000000001b .LASF26
+GAS LISTING /tmp/ccgaeXAw.s 			page 7
 
 
-     /tmp/ccP3cEgu.s:122    .text:0000000000000078 .LVL6
-     /tmp/ccP3cEgu.s:80     .text:0000000000000050 .LVL4
-     /tmp/ccP3cEgu.s:46     .text:0000000000000028 .LVL2
-     /tmp/ccP3cEgu.s:14     .text:0000000000000000 .LVL0
-     /tmp/ccP3cEgu.s:158    .debug_info:0000000000000000 .Ldebug_info0
-     /tmp/ccP3cEgu.s:106    .gcc_except_table:0000000000000000 .LLSDA2
-     /tmp/ccP3cEgu.s:147    .gcc_except_table:0000000000000004 .LLSDA3
+     /tmp/ccgaeXAw.s:122    .text:0000000000000078 .LVL6
+     /tmp/ccgaeXAw.s:80     .text:0000000000000050 .LVL4
+     /tmp/ccgaeXAw.s:46     .text:0000000000000028 .LVL2
+     /tmp/ccgaeXAw.s:14     .text:0000000000000000 .LVL0
+     /tmp/ccgaeXAw.s:158    .debug_info:0000000000000000 .Ldebug_info0
+     /tmp/ccgaeXAw.s:106    .gcc_except_table:0000000000000000 .LLSDA2
+     /tmp/ccgaeXAw.s:147    .gcc_except_table:0000000000000004 .LLSDA3
 
 UNDEFINED SYMBOLS
 __mem_alloc

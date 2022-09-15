@@ -22,7 +22,12 @@ int thread_create(
         );
 int thread_exit();
 void thread_dispatch();
+void thread_initialization(
+        thread_t *handle,
+        void(*start_routine)(void*),
+        void *arg);
 
+void thread_start(thread_t t);
 
 class _sem;
 typedef _sem* sem_t;

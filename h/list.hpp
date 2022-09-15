@@ -21,7 +21,7 @@ private:
         Elem(T *data) : data(data), next(nullptr), sleepTime(0) {}
     };
 
-    Elem *head, *tail;
+    Elem *head, *tail, *pom = nullptr;
 
 public:
     List() : head(0), tail(0) {}
@@ -29,6 +29,16 @@ public:
     List(const List<T> &) = delete;
 
     List<T> &operator=(const List<T> &) = delete;
+
+    T* traverseList(){
+        if(pom == nullptr){
+            pom = head;
+        }
+        Elem *t = pom;
+        pom = pom->next;
+
+        return t->data;
+    }
 
     void addFirst(T *data)
     {

@@ -82,6 +82,33 @@ int thread_exit(){
     return ret;
 }
 
+void thread_dispatch(){
+    __asm__ volatile("mv a0, %0" : : "r" (THREAD_DISPACH));
+    __asm__ volatile("ecall");
+}
+
+void thread_initialization(
+        thread_t *handle,
+        void(*start_routine)(void*),
+        void *arg) {
+    void* volatile stack = new uint64[DEFAULT_STACK_SIZE];
+    if (stack != nullptr) {
+        __asm__ volatile("mv a0, %0" : : "r" (THREAD_INIT));
+        __asm__ volatile("mv a1, %0" : : "r" (handle));
+        __asm__ volatile("mv a2, %0" : : "r" (start_routine));
+        __asm__ volatile("mv a3, %0" : : "r" (arg));
+        __asm__ volatile("mv a4, %0" : : "r" (stack));
+        __asm__ volatile("ecall");
+    }
+}
+
+void thread_start(thread_t t){
+    __asm__ volatile("mv a1, %0" : : "r" (t));
+    __asm__ volatile("mv a0, %0" : : "r" (THREAD_START));
+    __asm__ volatile("ecall");
+}
+
+
 int sem_open(sem_t *handle, unsigned init){
     __asm__ volatile("mv a2, %0" : : "r" (init));
     __asm__ volatile("mv a1, %0" : : "r" (handle));
@@ -103,7 +130,7 @@ int sem_close(sem_t handle){
 
 int sem_wait(sem_t id){
     __asm__ volatile("mv a1, %0" : : "r" (id));
-    __asm__ volatile("mv a0, %0" : : "r" (SEM_SIGNAL));
+    __asm__ volatile("mv a0, %0" : : "r" (SEM_WAIT));
     __asm__ volatile("ecall");
     uint64 ret;
     __asm__ volatile("mv %0, a0" : "=r" (ret));
