@@ -6,7 +6,7 @@
 #define XV6_CONSUMERPRODUCER_C_API_TEST_H
 
 #include "../h/syscall_c.h"
-
+#include "../h/_sem.hpp"
 #include "buffer.hpp"
 
 sem_t waitForAll;
@@ -109,6 +109,7 @@ void producerConsumer_C_API() {
     Buffer *buffer = new Buffer(n);
 
     sem_open(&waitForAll, 0);
+//    _sem::createSem(&waitForAll, 0);
 
     thread_t threads[threadNum];
     thread_t consumerThread;

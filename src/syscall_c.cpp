@@ -7,6 +7,7 @@
 #include "../h/syscall_codes.h"
 #include "../h/print.hpp"
 #include "../h/tcb.hpp"
+#include "../lib/mem.h"
 
 void syscall(){
     __asm__ volatile("ecall");
@@ -19,34 +20,37 @@ void setArgs(){
 //pakovanje poziva sa argumentima
 
 void* mem_alloc(size_t size){
-    uint64 volatile blocksNum;
-    if(size % MEM_BLOCK_SIZE != 0) {
-        blocksNum = size / MEM_BLOCK_SIZE + 1;
-    }
-    else {
-        blocksNum = size / MEM_BLOCK_SIZE;
-    }
-    __asm__ volatile("mv a0, %0" : : "r" (MEM_ALLOC));
-    __asm__ volatile("mv a1, %0" : : "r" (blocksNum));
-    __asm__ volatile("ecall");
-    //poziv za blockNum
-    void* ret;
-    __asm__ volatile("mv %0, a0" : "=r" (ret));
-//    printString("povratak iz prekidne rutine\n");
-//    printInteger((uint64)ret);
-    return (void*)ret;
+//    uint64 volatile blocksNum;
+//    if(size % MEM_BLOCK_SIZE != 0) {
+//        blocksNum = size / MEM_BLOCK_SIZE + 1;
+//    }
+//    else {
+//        blocksNum = size / MEM_BLOCK_SIZE;
+//    }
+//    __asm__ volatile("mv a0, %0" : : "r" (MEM_ALLOC));
+//    __asm__ volatile("mv a1, %0" : : "r" (blocksNum));
+//    __asm__ volatile("ecall");
+//    //poziv za blockNum
+//    void* ret;
+//    __asm__ volatile("mv %0, a0" : "=r" (ret));
+////    printString("povratak iz prekidne rutine\n");
+////    printInteger((uint64)ret);
+//    return (void*)ret;
+    return __mem_alloc(size);
 }
-
+//
 int mem_free(void *p){
     //prvo cu upisati p u a1, jer ako stavim prvo da se upise vrednost u a0 promenicu i argumen p
     //jer je preko njega poslat argument f-je
-    __asm__ volatile("mv a1, %0" : : "r" (p));
-    __asm__ volatile("mv a0, %0" : : "r" (MEM_FREE));
-
-    __asm__ volatile("ecall");
-    uint64 ret;
-    __asm__ volatile("mv %0, a0" : "=r" (ret));
-    return ret;
+//    __asm__ volatile("mv a1, %0" : : "r" (p));
+//    __asm__ volatile("mv a0, %0" : : "r" (MEM_FREE));
+//
+//    __asm__ volatile("ecall");
+//    uint64 ret;
+//    __asm__ volatile("mv %0, a0" : "=r" (ret));
+//    return ret;
+    __mem_free(p);
+    return 0;
 }
 
 int thread_create( thread_t* handle,
@@ -56,7 +60,7 @@ int thread_create( thread_t* handle,
     //za ABI poziv mora se dodati i argument za stek
 
     void* volatile stack = new uint64[DEFAULT_STACK_SIZE];
-    printInteger((uint64)stack);
+//    printInteger((uint64)stack);
     if(stack != nullptr) {
         __asm__ volatile("mv a0, %0" : : "r" (THREAD_CREATE));
         __asm__ volatile("mv a1, %0" : : "r" (handle));

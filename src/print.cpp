@@ -6,7 +6,7 @@
 #include "../h/riscv.hpp"
 //#include "../lib/console.h"
 
-void printString(char const *string)
+void printStringO(char const *string)
 {
     uint64 sstatus = Riscv::r_sstatus();
     Riscv::mc_sstatus(Riscv::SSTATUS_SIE);

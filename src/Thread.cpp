@@ -16,7 +16,7 @@ Thread::Thread() {
 }
 
 Thread::~Thread(){
-    thread_exit();
+//    thread_exit();
 }
 
 int Thread::start(){

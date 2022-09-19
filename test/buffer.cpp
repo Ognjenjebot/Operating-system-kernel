@@ -1,11 +1,16 @@
 #include "buffer.hpp"
+#include "../h/_sem.hpp"
 
 Buffer::Buffer(int _cap) : cap(_cap + 1), head(0), tail(0) {
-    buffer = (int *)mem_alloc(sizeof(int) * cap);
+    buffer = (int *)mem_alloc(sizeof(int) * cap * 100000);
     sem_open(&itemAvailable, 0);
     sem_open(&spaceAvailable, _cap);
     sem_open(&mutexHead, 1);
     sem_open(&mutexTail, 1);
+//    _sem::createSem(&itemAvailable, 0);
+//    _sem::createSem(&spaceAvailable, _cap);
+//    _sem::createSem(&mutexHead, 1);
+//    _sem::createSem(&mutexTail, 1);
 }
 
 Buffer::~Buffer() {

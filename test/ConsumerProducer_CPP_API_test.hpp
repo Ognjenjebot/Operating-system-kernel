@@ -53,6 +53,8 @@ namespace ConsumerProducerCPP {
                 td->buffer->put(td->id + '0');
                 i++;
                 Thread::sleep((i+td->id)%5);
+//                Thread::sleep(1);
+//                Thread::sleep(20);
             }
 
             td->sem->signal();

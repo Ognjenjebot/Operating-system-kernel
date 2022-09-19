@@ -104,8 +104,7 @@ public:
         if (!tail) { return 0; }
         return tail->data;
     }
-
-    void addSleepingThread(T *data, int time){
+void addSleepingThread(T *data, int time){
         Elem *elem = new Elem(data);
         if(!head){
             head = elem;
@@ -127,6 +126,7 @@ public:
         if(!prev){
             head = elem;
             head->next = next;
+            head->sleepTime = time;
             head->next->sleepTime -=  head->sleepTime;
         }
         else {
@@ -151,7 +151,7 @@ public:
     }
 
     void sleepControl(){
-        if(head != nullptr && --head->sleepTime == 0) //dekrementira vreme i radi proveru
+        if(head != nullptr && --head->sleepTime <= 0) //dekrementira vreme i radi proveru
             removeSleepingThreads();
     }
 };

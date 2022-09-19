@@ -59,7 +59,7 @@ void _thread::threadWrapper()
     Riscv::popSppSpie();
     running->body(_thread::running->args);
     running->setFinished(true);
-    printString("gotova nit");
+//    printStringO("gotova nit");
     _thread::yield();
 }
 
@@ -84,17 +84,19 @@ void _thread::dblck(){
 
 
 int _thread::sleep(time_t time) {
-    running->setSleep();
-    Riscv::sleepingThreads.addSleepingThread(running, time);
-    dispatch();
+    if(time != 0) {
+        running->setSleep();
+        Riscv::sleepingThreads.addSleepingThread(running, time);
+        thread_dispatch();
+    }
     return 0; //TODO povratna vrednost!!!
 }
 
 void _thread::consoleWrite(void* t) {
     {
         while(true){
-            char c = Riscv::buff1.take();
-            if((*((char*)CONSOLE_STATUS) & CONSOLE_TX_STATUS_BIT) && (Riscv::buff1.getCount() > 0)){
+            while((*((char*)CONSOLE_STATUS) & CONSOLE_TX_STATUS_BIT)){
+                char c = Riscv::buff1.take();
                 *((char*)CONSOLE_TX_DATA) = c;
             }
         }

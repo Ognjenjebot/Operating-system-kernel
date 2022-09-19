@@ -31,9 +31,17 @@ private:
     sem_t myHandle;
 };
 class PeriodicThread : public Thread {
+private:
+    time_t  period;
 protected:
     PeriodicThread (time_t period);
     virtual void periodicActivation () {}
+    void run() override {
+        while (true) {
+            periodicActivation();
+            time_sleep(this->period);
+        }
+    }
 };
 class Console {
 public:

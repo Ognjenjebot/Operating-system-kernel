@@ -34,7 +34,8 @@ void _sem::block() {
 
     _thread::running->blocked  = true;
     _thread::running->blockedBy = this;
-    _thread::dispatch();
+//    _thread::dispatch();
+    thread_dispatch();
     //pozvace se zamena konteksta, ako je blocked = true u dispach()-u ce se ubaciti nit u blocked que
 }
 
