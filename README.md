@@ -5,6 +5,7 @@ OS kernel is implemented for **RISC V** architecture and is ran in qemu emulator
 ---
 
 The kernel provides three interfaces to the user program that are organized in layers.
+
 ![Layers Image](https://github.com/Ognjenjebot/Operating-system-kernel/blob/main/Layers.jpg?raw=true)
 
 Code for all the layers is being run in a unique address space. Kernel code and code with hardware access runs in privileged mode(system mode), while everything under the dark line runs in user mode.
